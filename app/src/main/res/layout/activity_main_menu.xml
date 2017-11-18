@@ -5,11 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="edu.orangecoastcollege.cs220.dreyna3.freshlysqueezed.MainMenuActivity"
-    android:background="@color/green">
+    android:background="@color/colorPrimary">
 
     <Button
         android:id="@+id/button5"
-        style="@style/Widget.AppCompat.Button"
         android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:text="Search"
@@ -20,7 +19,6 @@
 
     <Button
         android:id="@+id/button4"
-        style="@style/Widget.AppCompat.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:width="160dp"
@@ -30,7 +28,6 @@
 
     <Button
         android:id="@+id/button3"
-        style="@style/Widget.AppCompat.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
@@ -42,7 +39,6 @@
 
     <TextView
         android:id="@+id/textView"
-        style="@android:style/Widget.DeviceDefault.Light.TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-smallcaps"
@@ -51,5 +47,6 @@
         android:textStyle="bold"
         android:layout_above="@+id/button5"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="130dp" />
+        android:layout_marginBottom="130dp"
+        android:textColor="@color/black"/>
 </RelativeLayout>
