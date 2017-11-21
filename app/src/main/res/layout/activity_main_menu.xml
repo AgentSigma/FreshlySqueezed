@@ -11,7 +11,7 @@
         android:id="@+id/button5"
         android:layout_width="160dp"
         android:layout_height="wrap_content"
-        android:text="Search"
+        android:text="Reviews"
         android:layout_marginTop="12dp"
         android:layout_below="@+id/button4"
         android:layout_alignLeft="@+id/button4"
