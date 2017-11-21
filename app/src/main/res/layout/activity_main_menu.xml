@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="edu.orangecoastcollege.cs220.dreyna3.freshlysqueezed.MainMenuActivity"
-    android:background="@color/colorPrimary">
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context="edu.orangecoastcollege.cs220.dreyna3.freshlysqueezed.MainMenuActivity"
+                android:background="@color/grey">
 
     <Button
         android:id="@+id/button5"
@@ -15,7 +15,9 @@
         android:layout_marginTop="12dp"
         android:layout_below="@+id/button4"
         android:layout_alignLeft="@+id/button4"
-        android:layout_alignStart="@+id/button4" />
+        android:layout_alignStart="@+id/button4"
+        style="@style/Base.Widget.AppCompat.Button.Colored"
+        android:onClick="searchClick"/>
 
     <Button
         android:id="@+id/button4"
@@ -24,7 +26,8 @@
         android:width="160dp"
         android:text="Movies"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        style="@style/Base.Widget.AppCompat.Button.Colored"/>
 
     <Button
         android:id="@+id/button3"
@@ -35,7 +38,8 @@
         android:text="Logout"
         android:layout_below="@+id/button5"
         android:layout_alignLeft="@+id/button5"
-        android:layout_alignStart="@+id/button5" />
+        android:layout_alignStart="@+id/button5"
+        android:onClick="logOutClick"/>
 
     <TextView
         android:id="@+id/textView"
