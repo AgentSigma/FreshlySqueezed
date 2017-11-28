@@ -6,6 +6,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.util.ArrayList;
+
 /**
  * Created by dreyna3 on 11/21/2017.
  * ALL DATABASE READ/WRITE OPERATIONS GO HERE
@@ -55,46 +57,37 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
     /**
-     * Returns a null profile if username and password incorrect, else, returns a profile
-     * @param username user-entered username
-     * @param password user-entered password
-     * @return profile object
+     * Returns all profiles in an ArrayList<Profile>
      */
-    public Profile getProfile(String username, String password){
+    public ArrayList<Profile> getAllProfiles(){
         SQLiteDatabase db = this.getReadableDatabase();
-        Profile profile = null;
-        boolean profileFound = false;
+        ArrayList<Profile> profilesList = new ArrayList<>();
 
         Cursor cursor = db.query(
                 DATABASE_TABLE,
                 new String[]{
+                        KEY_FIELD_ID,
                         FIELD_USERNAME,
                         FIELD_PASSWORD,
                         FIELD_MOVIESTRING,
                         FIELD_IMAGENAME
                 }, null, null, null, null, null
         );
-        if (cursor.moveToFirst()){
 
+        if (cursor.moveToNext()){
             do{
-                profile = new Profile(
-                        cursor.getString(0), // Username
-                        cursor.getString(1), // Password
-                        cursor.getString(2), // MovieString
-                        cursor.getString(3) // ImageName
+                Profile profile = new Profile(
+                        cursor.getInt(0), // id
+                        cursor.getString(1), // username
+                        cursor.getString(2), // password
+                        cursor.getString(3), // movie string
+                        cursor.getString(4) // image name
                 );
+                profilesList.add(profile);
 
-                if (username.equals(profile.getUsername())
-                        && password.equals(profile.getPassword()))
-                    profileFound = true;
+            } while (cursor.moveToNext());
+        }
 
-            }while(cursor.moveToNext() || !profileFound);
-        }
-        if (!profileFound){
-            profile = null;
-            return profile;
-        }
-        else
-            return profile;
+        return profilesList;
     }
 }
