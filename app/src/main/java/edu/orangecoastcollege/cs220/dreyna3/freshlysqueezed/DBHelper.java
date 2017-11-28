@@ -6,15 +6,13 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import java.util.ArrayList;
-
 /**
  * Created by dreyna3 on 11/21/2017.
  * ALL DATABASE READ/WRITE OPERATIONS GO HERE
  */
 
 public class DBHelper extends SQLiteOpenHelper {
-    private final int KEY_FIELD_ID = -1;
+    private final String KEY_FIELD_ID = "_id";
     private final String DATABASE_TABLE = "Profiles";
     private final String FIELD_USERNAME = "Username";
     private final String FIELD_PASSWORD = "Password";
@@ -87,12 +85,16 @@ public class DBHelper extends SQLiteOpenHelper {
                 );
 
                 if (username.equals(profile.getUsername())
-                        && password.equals( profile.getPassword()))
+                        && password.equals(profile.getPassword()))
                     profileFound = true;
 
             }while(cursor.moveToNext() || !profileFound);
         }
-        return profile;
+        if (!profileFound){
+            profile = null;
+            return profile;
+        }
+        else
+            return profile;
     }
-
 }
