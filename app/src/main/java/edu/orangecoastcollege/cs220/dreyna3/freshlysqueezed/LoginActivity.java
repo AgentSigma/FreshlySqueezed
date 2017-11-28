@@ -9,20 +9,21 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+import static edu.orangecoastcollege.cs220.dreyna3.freshlysqueezed.R.id.passwordEditText;
+
 public class LoginActivity extends AppCompatActivity {
 
     private ArrayList<Profile> allProfilesList;
     private DBHelper db;
 
     private EditText usernameEditText;
-    private EditText passwordEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        usernameEditText = (EditText) findViewById(R.id.editText)
+        usernameEditText = (EditText) findViewById(R.id.usernameEditText)
 
         db = new DBHelper(this);
         allProfilesList = db.getAllProfiles();
