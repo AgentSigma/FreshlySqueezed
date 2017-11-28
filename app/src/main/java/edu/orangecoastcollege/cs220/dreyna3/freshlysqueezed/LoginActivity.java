@@ -21,6 +21,9 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        usernameEditText = (EditText) findViewById(R.id.editText)
+
         db = new DBHelper(this);
         allProfilesList = db.getAllProfiles();
     }
@@ -51,9 +54,32 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
-    public void resetViewText()
-    {
+    public void resetViewText() {
         usernameEditText.setText("");
         passwordEditText.setText("");
+    }
+
+    public void createAccountClick(View view) {
+        String usernameText = usernameEditText.getText().toString();
+        Profile newProfile = new Profile();
+        boolean isUnique = false;
+        for (Profile p : allProfilesList) {
+            if (p.getName().equals(usernameText)) {
+                Toast.makeText(this, "Username already in use. Please try another.", Toast.LENGTH_SHORT).show();
+                usernameEditText.setText("");
+                usernameEditText.requestFocus();
+                break;
+            } else {
+                newProfile = p;
+                isUnique = true;
+                break;
+            }
+        }
+        if (isUnique){
+            db.addProfile(newProfile);
+            Intent toMainMenuIntent = new Intent(this, MainMenuActivity.class);
+            toMainMenuIntent.putExtra("userProfile", newProfile);
+            startActivity(toMainMenuIntent);
+        }
     }
 }
