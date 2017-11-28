@@ -96,4 +96,29 @@ public class DBHelper extends SQLiteOpenHelper {
 
         return profilesList;
     }
+
+    /**
+     * Returns all reviews in an arrayList<String>
+     * @return an ArrayList of all profile's movieString s
+     */
+    public ArrayList<String> getAllReviews(){
+        SQLiteDatabase db = this.getReadableDatabase();
+        ArrayList<String> allReviewsList = new ArrayList<>();
+
+        Cursor cursor = db.query(
+                DATABASE_TABLE,
+                new String[]{
+                        FIELD_MOVIESTRING
+                }, null, null, null, null, null
+        );
+
+        if (cursor.moveToFirst()){
+            do{
+                allReviewsList.add(cursor.getString(0));
+            } while (cursor.moveToNext());
+        }
+
+        return allReviewsList;
+    }
+
 }
