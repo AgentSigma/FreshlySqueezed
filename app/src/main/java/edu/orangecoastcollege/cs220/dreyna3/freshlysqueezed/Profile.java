@@ -1,10 +1,50 @@
 package edu.orangecoastcollege.cs220.dreyna3.freshlysqueezed;
 
-/**
- * Created by Daniel on 11/27/2017.
- */
-
 public class Profile {
-    // TODO: Create the profile class. Refer to the ToDo List on google docs
-    // TODO: NOTE: Some of the methods will show up as "used" and "unused" for now
+    // Variable name(s):
+    private String username;
+    private String password;
+    private String imageName;
+    private String movieString;
+
+    Profile(String newUsername, String newPassword, String newImageName, String newMovieString){
+        username = newUsername;
+        password = newPassword;
+        imageName = newImageName;
+        movieString = newMovieString;
+    }
+
+    // Getter(s):
+    public String getUsername(){
+        return username;
+    }
+
+    public String getPassword(){
+        return password;
+    }
+
+    public String getImage(){
+        return imageName;
+    }
+
+    public String getMovieString(){
+        return movieString;
+    }
+
+    // Setter(s):
+    public void setUsername(String newUsername){
+        username = newUsername;
+    }
+
+    public void setPassword(String newPassword){
+        password = newPassword;
+    }
+
+    public void setImageName(String newImageName){
+        imageName = newImageName;
+    }
+
+    public void setMovieString(String newMovieString){
+        movieString = newMovieString;
+    }
 }
