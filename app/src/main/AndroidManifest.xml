@@ -21,6 +21,8 @@
         </activity>
         <activity android:name=".SearchActivity" />
         <activity android:name=".MainMenuActivity" />
+        <activity android:name=".TopReviewsActivity" />
+        <activity android:name=".WriteReviewActivity"></activity>
         <activity android:name=".MoviesMenuActivity" />
         <activity android:name=".ReviewsMenuActivity"></activity>
     </application>
