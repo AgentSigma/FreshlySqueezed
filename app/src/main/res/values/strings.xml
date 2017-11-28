@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">FreshlySqueezed</string>
+    <string name="incorrect_input_Toast">Incorrect Login. Please Try Again</string>
 </resources>

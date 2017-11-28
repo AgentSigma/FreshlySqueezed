@@ -14,6 +14,11 @@ import java.util.ArrayList;
  */
 
 public class DBHelper extends SQLiteOpenHelper {
+    private static final int DATABASE_VERSION = 1;
+    static final String DATABASE_NAME = "ProfilesDB";
+
+    private Context mContext;
+
     private final String KEY_FIELD_ID = "_id";
     private final String DATABASE_TABLE = "Profiles";
     private final String FIELD_USERNAME = "Username";
@@ -21,8 +26,9 @@ public class DBHelper extends SQLiteOpenHelper {
     private final String FIELD_MOVIESTRING = "MovieString";
     private final String FIELD_IMAGENAME = "ImageName";
 
-    public DBHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
-        super(context, name, factory, version);
+    public DBHelper(Context context){
+        super(context, DATABASE_NAME, null, DATABASE_VERSION);
+        mContext = context;
     }
 
     @Override
