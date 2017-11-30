@@ -27,6 +27,9 @@ public class LoginActivity extends AppCompatActivity {
         usernameEditText = (EditText) findViewById(R.id.usernameEditText);
         passwordEditText= (EditText) findViewById(R.id.passwordEditText);
         db = new DBHelper(this);
+
+//        db.deleteDatabaseDEBUG();
+
         allProfilesList = db.getAllProfiles();
     }
 
@@ -67,6 +70,8 @@ public class LoginActivity extends AppCompatActivity {
             Toast.makeText(this, "Please enter any missing fields", Toast.LENGTH_SHORT).show();
             return;
         }
+
+
         Profile newProfile = new Profile(usernameText,passwordText);
         boolean isUnique = false;
 

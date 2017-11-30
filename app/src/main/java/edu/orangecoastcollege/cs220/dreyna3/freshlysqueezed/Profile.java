@@ -9,22 +9,19 @@ public class Profile implements Parcelable{
     private String username;
     private String password;
     private String imageName;
-    private String movieString;
 
     Profile(String newUsername, String newPassword){
         id=-1;
         username = newUsername;
         password = newPassword;
-        imageName = "none.png";
-        movieString = "";
+        imageName = "default_profile_image.png";
     }
 
-    public Profile(int id, String username, String password, String imageName, String movieString) {
+    public Profile(int id, String username, String password, String imageName){
         this.id = id;
         this.username = username;
         this.password = password;
         this.imageName = imageName;
-        this.movieString = movieString;
     }
 
     protected Profile(Parcel in) {
@@ -32,7 +29,6 @@ public class Profile implements Parcelable{
         username = in.readString();
         password = in.readString();
         imageName = in.readString();
-        movieString = in.readString();
     }
 
     public static final Creator<Profile> CREATOR = new Creator<Profile>() {
@@ -61,9 +57,6 @@ public class Profile implements Parcelable{
         return imageName;
     }
 
-    public String getMovieString(){
-        return movieString;
-    }
 
     // Setter(s):
     public void setUsername(String newUsername){
@@ -78,9 +71,6 @@ public class Profile implements Parcelable{
         imageName = newImageName;
     }
 
-    public void setMovieString(String newMovieString){
-        movieString = newMovieString;
-    }
 
     @Override
     public int describeContents() {
@@ -93,6 +83,5 @@ public class Profile implements Parcelable{
         parcel.writeString(username);
         parcel.writeString(password);
         parcel.writeString(imageName);
-        parcel.writeString(movieString);
     }
 }

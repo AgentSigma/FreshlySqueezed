@@ -5,7 +5,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 tools:context="edu.orangecoastcollege.cs220.dreyna3.freshlysqueezed.MainMenuActivity"
-                android:background="@color/lightYellow">
+                android:background="@color/white">
 
     <Button
         android:id="@+id/button5"
@@ -21,13 +21,14 @@
 
     <Button
         android:id="@+id/button4"
+        style="@style/Base.Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:width="160dp"
-        android:text="Movies"
-        android:layout_centerVertical="true"
+        android:layout_below="@+id/userProfileImageView"
         android:layout_centerHorizontal="true"
-        style="@style/Base.Widget.AppCompat.Button.Colored"/>
+        android:layout_marginTop="47dp"
+        android:width="160dp"
+        android:text="Movies"/>
 
     <Button
         android:id="@+id/logoutButton"
@@ -43,19 +44,19 @@
 
     <ImageView
         android:layout_width="wrap_content"
-        android:layout_height="80dp"
+        android:layout_height="200dp"
         android:layout_alignParentTop="true"
-        android:src="@drawable/rough_logo"/>
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-smallcaps"
-        android:text="Freshly Squeezed"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        android:layout_above="@+id/button5"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="130dp"
-        android:textColor="@color/black"/>
+        android:src="@drawable/rough_logo"
+        android:id="@+id/imageView5"/>
+
+    <ImageView
+        android:id="@+id/userProfileImageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/imageView5"
+        android:layout_centerHorizontal="true"
+        android:alpha="0.5"
+        android:src="@drawable/default_profile_image"
+        android:onClick="setProfileImage"/>
 </RelativeLayout>

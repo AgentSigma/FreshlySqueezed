@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 
 public class MainMenuActivity extends AppCompatActivity {
-    Profile userProfile;
+    private Profile userProfile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,5 +23,9 @@ public class MainMenuActivity extends AppCompatActivity {
 
     public void searchClick(View view) {
         startActivity(new Intent(this, SearchActivity.class));
+    }
+
+    public void setProfileImage(View view) {
+
     }
 }

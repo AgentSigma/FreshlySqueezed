@@ -15,7 +15,7 @@ import java.util.ArrayList;
 
 public class DBHelper extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
-    static final String DATABASE_NAME = "ProfilesDB";
+    static final String DATABASE_NAME = "ProfileReviewDB";
 
     private Context mContext;
 
@@ -73,7 +73,6 @@ public class DBHelper extends SQLiteOpenHelper {
 
         values.put(FIELD_USERNAME, profile.getUsername());
         values.put(FIELD_PASSWORD, profile.getPassword());
-        values.put(FIELD_MOVIESTRING, profile.getMovieString());
         values.put(FIELD_IMAGENAME, profile.getImage());
 
         db.insert(DATABASE_TABLE, null, values);
@@ -93,7 +92,6 @@ public class DBHelper extends SQLiteOpenHelper {
                         KEY_FIELD_ID,
                         FIELD_USERNAME,
                         FIELD_PASSWORD,
-                        FIELD_MOVIESTRING,
                         FIELD_IMAGENAME
                 }, null, null, null, null, null
         );
@@ -101,12 +99,10 @@ public class DBHelper extends SQLiteOpenHelper {
         if (cursor.moveToNext()){
             do{
                 Profile profile = new Profile(
-
                         cursor.getInt(0), // id
                         cursor.getString(1), // username
                         cursor.getString(2), // password
-                        cursor.getString(3), // movie string
-                        cursor.getString(4) // image name
+                        cursor.getString(3) // imageName
                 );
                 profilesList.add(profile);
 
@@ -116,6 +112,12 @@ public class DBHelper extends SQLiteOpenHelper {
         return profilesList;
     }
 
+    public void deleteDatabaseDEBUG(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("DROP TABLE IF EXISTS " + DATABASE_TABLE);
+        db.execSQL("DROP TABLE IF EXISTS " + DATABASE_REVIEWTABLE);
+        onCreate(db);
+    }
 
 
 
