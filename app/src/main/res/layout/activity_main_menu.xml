@@ -5,41 +5,41 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 tools:context="edu.orangecoastcollege.cs220.dreyna3.freshlysqueezed.MainMenuActivity"
-                android:background="@color/lightYellow">
+                android:background="@drawable/main_menu_bkg">
 
     <Button
         android:id="@+id/button5"
         android:layout_width="160dp"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:text="Reviews"
-        android:layout_marginTop="12dp"
+        android:background="@drawable/reviews_button"
+        android:layout_marginTop="14dp"
+        android:onClick="searchClick"
         android:layout_below="@+id/button4"
-        android:layout_alignLeft="@+id/button4"
-        android:layout_alignStart="@+id/button4"
-        style="@style/Base.Widget.AppCompat.Button.Colored"
-        android:onClick="searchClick"/>
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:id="@+id/button4"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:width="160dp"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
         android:text="Movies"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        style="@style/Base.Widget.AppCompat.Button.Colored"/>
+        android:background="@drawable/movies_button"
+        android:layout_marginTop="116dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:id="@+id/logoutButton"
+        style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:width="160dp"
-        android:text="Logout"
-        android:layout_below="@+id/button5"
         android:layout_alignLeft="@+id/button5"
+        android:layout_alignParentBottom="true"
         android:layout_alignStart="@+id/button5"
-        android:onClick="logOutClick"/>
+        android:width="160dp"
+        android:onClick="logOutClick"
+        android:text="Logout" />
 
     <TextView
         android:id="@+id/textView"
@@ -49,8 +49,8 @@
         android:text="Freshly Squeezed"
         android:textSize="30sp"
         android:textStyle="bold"
-        android:layout_above="@+id/button5"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="130dp"
-        android:textColor="@color/black"/>
+        android:textColor="@color/black"
+        android:layout_marginTop="96dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>
