@@ -49,7 +49,7 @@ public class Movie {
         genre = newGenre;
     }
 
-    public void setRating(int newRating)
+    public void setRating(float newRating)
     {
         rating = newRating;
     }
