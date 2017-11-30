@@ -6,11 +6,15 @@ import android.os.Bundle;
 import android.view.View;
 
 public class MainMenuActivity extends AppCompatActivity {
+    private Profile userProfile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
+        Intent fromIntent = getIntent();
+
+        userProfile = fromIntent.getExtras().getParcelable("userProfile");
     }
 
     public void logOutClick(View view) {
@@ -19,5 +23,9 @@ public class MainMenuActivity extends AppCompatActivity {
 
     public void searchClick(View view) {
         startActivity(new Intent(this, SearchActivity.class));
+    }
+
+    public void setProfileImage(View view) {
+
     }
 }
