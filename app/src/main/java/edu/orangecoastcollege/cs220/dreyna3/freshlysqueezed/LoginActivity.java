@@ -63,18 +63,30 @@ public class LoginActivity extends AppCompatActivity {
     public void createAccountClick(View view) {
         String usernameText = usernameEditText.getText().toString();
         String passwordText= passwordEditText.getText().toString();
+        if (usernameText.equals("") || passwordText.equals("")){
+            Toast.makeText(this, "Please enter any missing fields", Toast.LENGTH_SHORT).show();
+            return;
+        }
         Profile newProfile = new Profile(usernameText,passwordText);
         boolean isUnique = false;
-        for (Profile p : allProfilesList) {
-            if (p.getUsername().equals(usernameText)) {
-                Toast.makeText(this, "Username already in use. Please try another.", Toast.LENGTH_SHORT).show();
-                usernameEditText.setText("");
-                usernameEditText.requestFocus();
-                break;
-            } else {
-                newProfile = p;
-                isUnique = true;
-                break;
+
+        // If no accounts on DB
+        if (allProfilesList.size() == 0){
+            isUnique = true;
+        }
+        // Else check against all accounts for unique username
+        else {
+            for (Profile p : allProfilesList) {
+                if (p.getUsername().equals(usernameText)) {
+                    Toast.makeText(this, "Username already in use. Please try another.", Toast.LENGTH_SHORT).show();
+                    usernameEditText.setText("");
+                    usernameEditText.requestFocus();
+                    break;
+                } else {
+                    newProfile = p;
+                    isUnique = true;
+                    break;
+                }
             }
         }
         if (isUnique){

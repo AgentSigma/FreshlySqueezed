@@ -39,7 +39,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:layout_editor_absoluteX="72dp"
-        tools:layout_editor_absoluteY="333dp" />
+        tools:layout_editor_absoluteY="307dp"/>
 
     <TextView
         android:id="@+id/textView8"
@@ -47,7 +47,7 @@
         android:layout_height="wrap_content"
         android:text="Rate Movie"
         tools:layout_editor_absoluteX="157dp"
-        tools:layout_editor_absoluteY="307dp" />
+        tools:layout_editor_absoluteY="288dp"/>
 
     <EditText
         android:id="@+id/editText3"
@@ -57,6 +57,6 @@
         android:inputType="textPersonName"
         android:text="Write your Review:"
         tools:layout_editor_absoluteX="44dp"
-        tools:layout_editor_absoluteY="416dp" />
+        tools:layout_editor_absoluteY="364dp"/>
 
 </android.support.constraint.ConstraintLayout>

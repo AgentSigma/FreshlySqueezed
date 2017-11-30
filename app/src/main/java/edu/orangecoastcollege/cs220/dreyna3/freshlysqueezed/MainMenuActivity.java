@@ -6,11 +6,15 @@ import android.os.Bundle;
 import android.view.View;
 
 public class MainMenuActivity extends AppCompatActivity {
+    Profile userProfile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
+        Intent fromIntent = getIntent();
+
+        userProfile = fromIntent.getExtras().getParcelable("userProfile");
     }
 
     public void logOutClick(View view) {

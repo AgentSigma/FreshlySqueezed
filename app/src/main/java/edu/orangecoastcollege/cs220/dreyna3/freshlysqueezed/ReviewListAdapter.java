@@ -36,8 +36,7 @@ public class ReviewListAdapter extends ArrayAdapter<Review> {
         mLogsList = logs;
     }
 
-    public View getView(int pos, View convertView, ViewGroup parent)
-    {
+    public View getView(int pos, View convertView, ViewGroup parent) {
 
 
         LayoutInflater inflater =
@@ -46,19 +45,19 @@ public class ReviewListAdapter extends ArrayAdapter<Review> {
         Review review = mLogsList.get(pos);
         ReviewListLinearLayout =
                 (LinearLayout) view.findViewById(R.id.ReviewItemLinearLayout);
-        descriptionTextView   =
+        descriptionTextView =
                 (TextView) view.findViewById(R.id.ReviewItemText);
         titleTextView =
                 (TextView) view.findViewById(R.id.ReviewmovieTitle);
-        AuthorTextView=
+        AuthorTextView =
                 (TextView) view.findViewById(R.id.authorTextViewItem);
         ReviewRatingBar =
                 (RatingBar) view.findViewById(R.id.ReviewratingBar);
 
         titleTextView.setText(review.getTitle());
         descriptionTextView.setText(review.getReview());
-       ReviewRatingBar.setRating(review.getRating());;
-       AuthorTextView.setText(review.getAuthor());
+        ReviewRatingBar.setRating(review.getRating());
+        AuthorTextView.setText(review.getAuthor());
         ReviewListLinearLayout.setTag(review);
         return view;
     }
