@@ -17,14 +17,15 @@ public class LoginActivity extends AppCompatActivity {
     private DBHelper db;
 
     private EditText usernameEditText;
+    private EditText passwordEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        usernameEditText = (EditText) findViewById(R.id.usernameEditText)
-
+        usernameEditText = (EditText) findViewById(R.id.usernameEditText);
+        passwordEditText= (EditText) findViewById(R.id.passwordEditText);
         db = new DBHelper(this);
         allProfilesList = db.getAllProfiles();
     }
@@ -39,8 +40,7 @@ public class LoginActivity extends AppCompatActivity {
             Toast.makeText(LoginActivity.this, R.string.incorrect_input_Toast, Toast.LENGTH_SHORT).show();
         } else {
             for (Profile p : allProfilesList) {
-                if (p.getName().equals(usernameText) && p.getPassword().equals(passwordText)) {
-                    name = "" + p.getName();
+                if (p.getUsername().equals(usernameText) && p.getPassword().equals(passwordText)) {
                     Intent intent = new Intent(this, MainMenuActivity.class);
                     intent.putExtra("userProfile", p);
                     loginSuccess = true;
@@ -62,10 +62,11 @@ public class LoginActivity extends AppCompatActivity {
 
     public void createAccountClick(View view) {
         String usernameText = usernameEditText.getText().toString();
-        Profile newProfile = new Profile();
+        String passwordText= passwordEditText.getText().toString();
+        Profile newProfile = new Profile(usernameText,passwordText);
         boolean isUnique = false;
         for (Profile p : allProfilesList) {
-            if (p.getName().equals(usernameText)) {
+            if (p.getUsername().equals(usernameText)) {
                 Toast.makeText(this, "Username already in use. Please try another.", Toast.LENGTH_SHORT).show();
                 usernameEditText.setText("");
                 usernameEditText.requestFocus();
@@ -83,4 +84,5 @@ public class LoginActivity extends AppCompatActivity {
             startActivity(toMainMenuIntent);
         }
     }
+
 }

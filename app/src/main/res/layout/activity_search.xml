@@ -47,9 +47,9 @@
         android:textColor="@color/black"/><requestFocus/>
 
     <ListView
+        android:id="@+id/MovieSearchListView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/editText2"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/listView2"/>
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>

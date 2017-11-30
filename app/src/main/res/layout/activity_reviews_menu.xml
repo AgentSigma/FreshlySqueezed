@@ -20,7 +20,7 @@
         android:layout_alignStart="@+id/button3" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/ReviewmovieTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-smallcaps"

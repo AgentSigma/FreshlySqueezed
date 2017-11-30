@@ -8,7 +8,7 @@
     android:background="@color/white">
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/MovieImageView"
         android:layout_width="80dp"
         android:layout_height="80dp"
         app:srcCompat="@drawable/rough_logo"
@@ -18,22 +18,22 @@
         android:layout_centerHorizontal="true" />
 
     <ListView
+        android:id="@+id/listViewTop5Movies"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="107dp"
-        android:id="@+id/listView"
-        android:layout_below="@+id/imageView2"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/MovieImageView"
+        android:layout_marginTop="107dp" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/ReviewmovieTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-smallcaps"
         android:text="Top 5 Movies"
         android:textSize="30sp"
-        android:layout_below="@+id/imageView2"
+        android:layout_below="@+id/MovieImageView"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="45dp" />
 </RelativeLayout>

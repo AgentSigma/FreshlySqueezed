@@ -8,7 +8,7 @@ public class Movie {
 
     private String movieTitle;
     private String genre;
-    private int rating;
+    private float rating;
     private String description;
     private String imageName;
 
@@ -25,7 +25,7 @@ public class Movie {
         return genre;
     }
 
-    public int getRating() {
+    public float getRating() {
         return rating;
     }
 

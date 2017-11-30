@@ -26,6 +26,15 @@ public class DBHelper extends SQLiteOpenHelper {
     private final String FIELD_MOVIESTRING = "MovieString";
     private final String FIELD_IMAGENAME = "ImageName";
 
+    //REVIEW DATABASE
+    private final String KEY_FIELD_REVIEWID = "_id";
+    private final String DATABASE_REVIEWTABLE = "Reviews";
+    private final String FIELD_REVIEWUSERNAME = "Author";
+    private final String FIELD_REVIEW = "review";
+    private final String FIELD_REVIEWMOVIETITLE= "Title";
+    private final String FIELD_REVIEWRATING = "Rating";
+
+
     public DBHelper(Context context){
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
         mContext = context;
@@ -33,7 +42,15 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        String table = "CREATE TABLE " + DATABASE_TABLE + "("
+        String table = "CREATE TABLE " + DATABASE_REVIEWTABLE + "("
+                + KEY_FIELD_REVIEWID + " INTEGER PRIMARY KEY, "
+                + FIELD_REVIEWUSERNAME + " TEXT, "
+                + FIELD_REVIEW + " TEXT, "
+                + FIELD_REVIEWMOVIETITLE + " TEXT, "
+                + FIELD_REVIEWRATING + " REAL)";
+        sqLiteDatabase.execSQL(table);
+
+         table = "CREATE TABLE " + DATABASE_TABLE + "("
                 + KEY_FIELD_ID + " INTEGER PRIMARY KEY, "
                 + FIELD_USERNAME + " TEXT, "
                 + FIELD_PASSWORD + " TEXT, "
@@ -45,6 +62,7 @@ public class DBHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + DATABASE_TABLE);
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS " + DATABASE_REVIEWTABLE);
         onCreate(sqLiteDatabase);
     }
 
@@ -55,8 +73,8 @@ public class DBHelper extends SQLiteOpenHelper {
 
         values.put(FIELD_USERNAME, profile.getUsername());
         values.put(FIELD_PASSWORD, profile.getPassword());
-        values.put(FIELD_MOVIESTRING, profile.getReviews());
-        values.put(FIELD_IMAGENAME, profile.getImageName());
+        values.put(FIELD_MOVIESTRING, profile.getMovieString());
+        values.put(FIELD_IMAGENAME, profile.getImage());
 
         db.insert(DATABASE_TABLE, null, values);
         db.close();
@@ -83,6 +101,7 @@ public class DBHelper extends SQLiteOpenHelper {
         if (cursor.moveToNext()){
             do{
                 Profile profile = new Profile(
+
                         cursor.getInt(0), // id
                         cursor.getString(1), // username
                         cursor.getString(2), // password
@@ -97,28 +116,45 @@ public class DBHelper extends SQLiteOpenHelper {
         return profilesList;
     }
 
-    /**
-     * Returns all reviews in an arrayList<String>
-     * @return an ArrayList of all profile's movieString s
-     */
-    public ArrayList<String> getAllReviews(){
+
+
+
+    // REVIEW DATABASE METHODS
+
+    public ArrayList<Review> getAllReivews(){
         SQLiteDatabase db = this.getReadableDatabase();
-        ArrayList<String> allReviewsList = new ArrayList<>();
+        ArrayList<Review> reviewList = new ArrayList<>();
 
         Cursor cursor = db.query(
-                DATABASE_TABLE,
+                DATABASE_REVIEWTABLE,
                 new String[]{
-                        FIELD_MOVIESTRING
+                        KEY_FIELD_REVIEWID,
+                        FIELD_REVIEWUSERNAME,
+                        FIELD_REVIEW,
+                        FIELD_REVIEWMOVIETITLE,
+                        FIELD_REVIEWRATING
                 }, null, null, null, null, null
         );
 
-        if (cursor.moveToFirst()){
+        if (cursor.moveToNext()){
             do{
-                allReviewsList.add(cursor.getString(0));
+                Review review = new Review(
+
+                        cursor.getInt(0), // id
+                        cursor.getString(1), // Author
+                        cursor.getString(2), // title
+                        cursor.getFloat(3), // review rating
+                        cursor.getString(4) // the review
+                );
+                reviewList.add(review);
+
             } while (cursor.moveToNext());
         }
 
-        return allReviewsList;
+        return reviewList;
     }
+
+
+
 
 }
