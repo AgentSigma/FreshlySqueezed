@@ -7,27 +7,41 @@
                 tools:context="edu.orangecoastcollege.cs220.dreyna3.freshlysqueezed.MainMenuActivity"
                 android:background="@drawable/main_menu_bkg">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:src="@drawable/rough_logo"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/imageView2"/>
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/default_profile_image"
+        android:layout_below="@id/imageView2"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/profileImageViewMainMenu"/>
     <Button
         android:id="@+id/button5"
         android:layout_width="160dp"
-        android:layout_height="100dp"
+        android:layout_height="140dp"
         android:text="Reviews"
-        android:background="@drawable/reviews_button"
-        android:layout_marginTop="14dp"
-        android:onClick="searchClick"
+        android:background="@drawable/clapperboard_icon"
+        android:onClick="toMoviesClick"
+        android:textColor="@color/white"
         android:layout_below="@+id/button4"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"/>
 
     <Button
         android:id="@+id/button4"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_width="160dp"
+        android:layout_height="140dp"
+        android:layout_below="@id/profileImageViewMainMenu"
+        android:background="@drawable/clapperboard_icon"
         android:text="Movies"
-        android:background="@drawable/movies_button"
-        android:layout_marginTop="116dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/white"
+        android:onClick="toReviewsClick"/>
 
     <Button
         android:id="@+id/logoutButton"
@@ -40,17 +54,4 @@
         android:width="160dp"
         android:onClick="logOutClick"
         android:text="Logout" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-smallcaps"
-        android:text="Freshly Squeezed"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        android:layout_marginTop="96dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
 </RelativeLayout>

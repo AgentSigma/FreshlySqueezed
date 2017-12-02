@@ -18,14 +18,21 @@ public class MainMenuActivity extends AppCompatActivity {
     }
 
     public void logOutClick(View view) {
-        finish();
-    }
-
-    public void searchClick(View view) {
-        startActivity(new Intent(this, SearchActivity.class));
+        Intent toLoginIntent = new Intent(this, LoginActivity.class);
+        toLoginIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(toLoginIntent);
     }
 
     public void setProfileImage(View view) {
+        String uri = "android.resource://edu.orangecoastcollege.cs220.dreyna3.freshsqueezed/drawable/"
+                + userProfile.getImage();
+    }
+
+    public void toReviewsClick(View view) {
+
+    }
+
+    public void toMoviesClick(View view) {
 
     }
     // SDfsdfsd

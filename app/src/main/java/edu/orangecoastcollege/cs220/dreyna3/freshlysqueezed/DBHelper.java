@@ -109,14 +109,15 @@ public class DBHelper extends SQLiteOpenHelper {
             } while (cursor.moveToNext());
         }
 
+        db.close();
+        cursor.close();
         return profilesList;
     }
 
     public void deleteDatabaseDEBUG(){
         SQLiteDatabase db = this.getWritableDatabase();
-        db.execSQL("DROP TABLE IF EXISTS " + DATABASE_TABLE);
-        db.execSQL("DROP TABLE IF EXISTS " + DATABASE_REVIEWTABLE);
-        onCreate(db);
+        db.delete(DATABASE_TABLE, null, null);
+        db.delete(DATABASE_REVIEWTABLE, null, null);
     }
 
 
@@ -155,8 +156,4 @@ public class DBHelper extends SQLiteOpenHelper {
 
         return reviewList;
     }
-
-
-
-
 }
