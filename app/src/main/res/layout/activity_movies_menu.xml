@@ -29,7 +29,8 @@
         android:width="160dp"
         android:text="My Top 5 Movies"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:onClick="toTopReviewsClick"/>
 
     <Button
         android:id="@+id/button4"
@@ -41,5 +42,6 @@
         android:layout_marginTop="19dp"
         android:layout_below="@+id/button3"
         android:layout_alignLeft="@+id/button3"
-        android:layout_alignStart="@+id/button3" />
+        android:layout_alignStart="@+id/button3"
+        android:onClick="toSearchClick"/>
 </RelativeLayout>

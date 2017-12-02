@@ -41,7 +41,8 @@
         android:width="160dp"
         android:text="Write review"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:onClick="toWriteReviewClick"/>
 
     <Button
         android:id="@+id/button4"
@@ -53,6 +54,7 @@
         android:layout_marginTop="14dp"
         android:layout_below="@+id/button"
         android:layout_alignLeft="@+id/button"
-        android:layout_alignStart="@+id/button" />
+        android:layout_alignStart="@+id/button"
+        android:onClick="toListReviewsClick"/>
 
 </RelativeLayout>

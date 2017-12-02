@@ -29,11 +29,14 @@ public class MainMenuActivity extends AppCompatActivity {
     }
 
     public void toReviewsClick(View view) {
-
+        Intent toReviewIntent = new Intent(this, ReviewsMenuActivity.class);
+        toReviewIntent.putExtra("userProfile", userProfile);
+        startActivity(toReviewIntent);
     }
 
     public void toMoviesClick(View view) {
-
+        Intent toMovieIntent = new Intent(this, MoviesMenuActivity.class);
+        toMovieIntent.putExtra("userProfile", userProfile);
+        startActivity(toMovieIntent);
     }
-    // SDfsdfsd
 }

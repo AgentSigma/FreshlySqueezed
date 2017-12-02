@@ -19,6 +19,7 @@
         android:layout_height="100dp"
         android:src="@drawable/default_profile_image"
         android:layout_below="@id/imageView2"
+        android:alpha="0.5"
         android:layout_centerHorizontal="true"
         android:id="@+id/profileImageViewMainMenu"/>
     <Button
@@ -27,7 +28,7 @@
         android:layout_height="140dp"
         android:text="Reviews"
         android:background="@drawable/clapperboard_icon"
-        android:onClick="toMoviesClick"
+        android:onClick="toReviewsClick"
         android:textColor="@color/white"
         android:layout_below="@+id/button4"
         android:layout_centerHorizontal="true"/>
@@ -41,7 +42,7 @@
         android:text="Movies"
         android:layout_centerHorizontal="true"
         android:textColor="@color/white"
-        android:onClick="toReviewsClick"/>
+        android:onClick="toMoviesClick"/>
 
     <Button
         android:id="@+id/logoutButton"
