@@ -1,10 +1,13 @@
 package edu.orangecoastcollege.cs220.dreyna3.freshlysqueezed;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 /**
  * Created by anamvari on 11/28/2017.
  */
 
-public class Movie {
+public class Movie implements Parcelable {
 
     private String movieTitle;
     private String genre;
@@ -14,6 +17,26 @@ public class Movie {
 
 
     Movie(){}
+
+    protected Movie(Parcel in) {
+        movieTitle = in.readString();
+        genre = in.readString();
+        rating = in.readFloat();
+        description = in.readString();
+        imageName = in.readString();
+    }
+
+    public static final Creator<Movie> CREATOR = new Creator<Movie>() {
+        @Override
+        public Movie createFromParcel(Parcel in) {
+            return new Movie(in);
+        }
+
+        @Override
+        public Movie[] newArray(int size) {
+            return new Movie[size];
+        }
+    };
 
     public String getMovieTitle()
     {
@@ -65,5 +88,17 @@ public class Movie {
     }
 
 
+    @Override
+    public int describeContents() {
+        return 0;
+    }
 
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeString(movieTitle);
+        parcel.writeString(genre);
+        parcel.writeFloat(rating);
+        parcel.writeString(description);
+        parcel.writeString(imageName);
+    }
 }
