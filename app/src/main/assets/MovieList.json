@@ -5,150 +5,72 @@
       "Genre": "Crime, Drama",
       "Rating": "4.7",
       "Description": "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
-      "ImageName": "Blink182.jpeg"
+      "ImageName": "Shawshank.jpeg"
     },
     {
-      "Title": "Blink 182",
-      "Genre": "October 7",
-      "Rating": "Friday",
-      "Description": "7:00 PM",
-      "ImageName": "Blink182.jpeg"
+      "Title": "The Godfather",
+      "Genre": "Crime, Drama",
+      "Rating": "4.6",
+      "Description": "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.",
+      "ImageName": "Godfather.jpeg"
     },
     {
-      "Title": "Blink 182",
-      "Genre": "October 7",
-      "Rating": "Friday",
-      "Description": "7:00 PM",
-      "ImageName": "Blink182.jpeg"
+      "Title": "The Dark Knight",
+      "Genre": "Action, Crime, Drama",
+      "Rating": "4.5",
+      "Description": "When the menace known as the Joker emerges from his mysterious past, he wreaks havoc and chaos on the people of Gotham, the Dark Knight must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
+      "ImageName": "Darkknight.jpeg"
     },
     {
-      "Title": "Blink 182",
-      "Genre": "October 7",
-      "Rating": "Friday",
-      "Description": "7:00 PM",
-      "ImageName": "Blink182.jpeg"
+      "Title": "The Godfather: Part II",
+      "Genre": "Crime, Drama",
+      "Rating": "4.5",
+      "Description": "The early life and career of Vito Corleone in 1920s New York City is portrayed, while his son, Michael, expands and tightens his grip on the family crime syndicate.",
+      "ImageName": "GodfatherII.jpeg"
     },
     {
-      "Title": "Blink 182",
-      "Genre": "October 7",
-      "Rating": "Friday",
-      "Description": "7:00 PM",
-      "ImageName": "Blink182.jpeg"
+      "Title": "Pulp Fiction",
+      "Genre": "Crime, Drama",
+      "Rating": "4.5",
+      "Description": "The lives of two mob hit men, a boxer, a gangster's wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
+      "ImageName": "PulpFiction.jpeg"
     },
     {
-      "Title": "Blink 182",
-      "Genre": "October 7",
-      "Rating": "Friday",
-      "Description": "7:00 PM",
-      "ImageName": "Blink182.jpeg"
+      "Title": "Schindler's List",
+      "Genre": "Biography, Drama, History",
+      "Rating": "4.5",
+      "Description": "In German-occupied Poland during World War II, Oskar Schindler gradually becomes concerned for his Jewish workforce after witnessing their persecution by the Nazi Germans.",
+      "ImageName": "SchindlersList.jpeg"
     },
     {
-      "Title": "Blink 182",
+      "Title": "The Lord of the Rings: Return of the King",
       "Genre": "October 7",
-      "Rating": "Friday",
-      "Description": "7:00 PM",
-      "ImageName": "Blink182.jpeg"
+      "Rating": "4.5",
+      "Description": "Gandalf and Aragorn lead the World of Men against Sauron's army to draw his gaze from Frodo and Sam as they approach Mount Doom with the One Ring.",
+      "ImageName": "LOTRReturnOfTheKing.jpeg"
     },
     {
-      "Title": "Blink 182",
+      "Title": "12 Angry Men",
       "Genre": "October 7",
-      "Rating": "Friday",
-      "Description": "7:00 PM",
-      "ImageName": "Blink182.jpeg"
+      "Rating": "4.5",
+      "Description": "A jury holdout attempts to prevent a miscarriage of justice by forcing his colleagues to reconsider the evidence.",
+      "ImageName": "12AngryMen.jpeg"
     },
     {
-      "Title": "Blink 182",
+      "Title": "The Good, the Bad, and the Ugly",
       "Genre": "October 7",
-      "Rating": "Friday",
-      "Description": "7:00 PM",
-      "ImageName": "Blink182.jpeg"
+      "Rating": "4.5",
+      "Description": "A bounty hunting scam joins two men in an uneasy alliance against a third in a race to find a fortune in gold buried in a remote cemetery.",
+      "ImageName": "GoodBadUgly.jpeg"
     },
     {
-      "Title": "Blink 182",
+      "Title": "Inception",
       "Genre": "October 7",
-      "Rating": "Friday",
-      "Description": "7:00 PM",
-      "ImageName": "Blink182.jpeg"
+      "Rating": "4.4",
+      "Description": "A thief, who steals corporate secrets through use of dream-sharing technology, is given the inverse task of planting an idea into the mind of a CEO.",
+      "ImageName": "Inception.jpeg"
     },
-    {
-      "Title": "Blink 182",
-      "Genre": "October 7",
-      "Rating": "Friday",
-      "Description": "7:00 PM",
-      "ImageName": "Blink182.jpeg"
-    },{
-      "Title": "Blink 182",
-      "Genre": "October 7",
-      "Rating": "Friday",
-      "Description": "7:00 PM",
-      "ImageName": "Blink182.jpeg"
-    },
-    {
-      "Title": "Blink 182",
-      "Genre": "October 7",
-      "Rating": "Friday",
-      "Description": "7:00 PM",
-      "ImageName": "Blink182.jpeg"
-    },
-    {
-      "Title": "Blink 182",
-      "Genre": "October 7",
-      "Rating": "Friday",
-      "Description": "7:00 PM",
-      "ImageName": "Blink182.jpeg"
-    },
-    {
-      "Title": "Blink 182",
-      "Genre": "October 7",
-      "Rating": "Friday",
-      "Description": "7:00 PM",
-      "ImageName": "Blink182.jpeg"
-    },
-    {
-      "Title": "Blink 182",
-      "Genre": "October 7",
-      "Rating": "Friday",
-      "Description": "7:00 PM",
-      "ImageName": "Blink182.jpeg"
-    },
-    {
-      "Title": "Blink 182",
-      "Genre": "October 7",
-      "Rating": "Friday",
-      "Description": "7:00 PM",
-      "ImageName": "Blink182.jpeg"
-    },
-    {
-      "Title": "Blink 182",
-      "Genre": "October 7",
-      "Rating": "Friday",
-      "Description": "7:00 PM",
-      "ImageName": "Blink182.jpeg"
-    }, {
-      "Title": "Blink 182",
-      "Genre": "October 7",
-      "Rating": "Friday",
-      "Description": "7:00 PM",
-      "ImageName": "Blink182.jpeg"
-    }, {
-      "Title": "Blink 182",
-      "Genre": "October 7",
-      "Rating": "Friday",
-      "Description": "7:00 PM",
-      "ImageName": "Blink182.jpeg"
-    }, {
-      "Title": "Blink 182",
-      "Genre": "October 7",
-      "Rating": "Friday",
-      "Description": "7:00 PM",
-      "ImageName": "Blink182.jpeg"
-    }, {
-      "Title": "Blink 182",
-      "Genre": "October 7",
-      "Rating": "Friday",
-      "Description": "7:00 PM",
-      "ImageName": "Blink182.jpeg"
-    }, {
+     {
       "Title": "Blink 182",
       "Genre": "October 7",
       "Rating": "Friday",
