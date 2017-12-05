@@ -40,8 +40,11 @@
         android:layout_above="@id/button3"
         android:layout_centerHorizontal="true"
         android:background="@drawable/clapperboard_icon"
-        android:text="Trending"
-        android:textColor="@color/white"/>
+        android:text="Top Movies"
+        android:textAlignment="textEnd"
+        android:textColor="@color/white"
+        android:onClick="toTrendingClick"
+        android:layout_gravity="end"/>
 
     <Button
         android:id="@+id/button4"
