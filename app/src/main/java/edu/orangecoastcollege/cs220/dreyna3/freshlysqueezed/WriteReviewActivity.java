@@ -35,8 +35,8 @@ public class WriteReviewActivity extends AppCompatActivity {
         else{
             Review newReview = new Review(
                     mUserProfile.getUsername(),
-                    mReviewEditText.getText().toString(),
-                    mTitleEditText.getText().toString(),
+                    mReviewEditText.getText().toString().trim(),
+                    mTitleEditText.getText().toString().trim(),
                     mRatingBar.getRating()
             );
 
