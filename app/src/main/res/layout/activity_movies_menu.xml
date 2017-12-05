@@ -4,7 +4,7 @@
                 xmlns:tools="http://schemas.android.com/tools"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/grey"
+                android:background="@drawable/movies_menu_bkg"
                 android:padding="15dp"
                 tools:context="edu.orangecoastcollege.cs220.dreyna3.freshlysqueezed.MoviesMenuActivity">
 
