@@ -37,6 +37,7 @@
             android:id="@+id/MovieratingBarItem"
             style="@style/Widget.AppCompat.RatingBar.Small"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:isIndicator="true"/>
     </LinearLayout>
 </LinearLayout>

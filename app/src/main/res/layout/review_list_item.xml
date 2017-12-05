@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/ReviewItemLinearLayout"
+    android:id="@+id/reviewItemLinearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:onClick="deleteReviewClick">
 
     <TextView
-        android:id="@+id/authorTextViewItem"
+        android:id="@+id/reviewItemAuthorTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Author" />
 
     <TextView
-        android:id="@+id/ReviewmovieTitle"
+        android:id="@+id/reviewItemMovieTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Title" />
 
     <RatingBar
-        android:id="@+id/ReviewratingBar"
+        android:id="@+id/reviewItemRatingBar"
         style="@style/Widget.AppCompat.RatingBar.Small"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:numStars="5" />
+        android:isIndicator="true"/>
 
     <TextView
-        android:id="@+id/ReviewItemText"
+        android:id="@+id/reviewItemReviewText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Review Text" />
-
 </LinearLayout>

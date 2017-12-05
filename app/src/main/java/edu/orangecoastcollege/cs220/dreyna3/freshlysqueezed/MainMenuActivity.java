@@ -32,17 +32,16 @@ public class MainMenuActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
+
+        Intent fromIntent = getIntent();
+        userProfile = fromIntent.getExtras().getParcelable("userProfile");
+
         profileImageView=(ImageView) findViewById(R.id.profileImageViewMainMenu) ;
         String uri = "android.resource://edu.orangecoastcollege.cs220.dreyna3.freshsqueezed/drawable/"
                 + userProfile.getImage();
         imageUri=getUriFromResource(this,R.drawable.default_profile_image);
 
         profileImageView.setImageURI(imageUri);
-
-
-        Intent fromIntent = getIntent();
-
-        userProfile = fromIntent.getExtras().getParcelable("userProfile");
     }
     public static Uri getUriFromResource(Context context, int resID)
     {
@@ -77,8 +76,6 @@ public class MainMenuActivity extends AppCompatActivity {
     }
 
     public void setProfileImage(View view) {
-
-
         List<String> permissionList= new ArrayList<>();
         // check each permission individually
         int hasCameraPerm= ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA);
@@ -135,5 +132,4 @@ public class MainMenuActivity extends AppCompatActivity {
         intent.putExtra("userImage", imageUri.toString());
         startActivity(intent);
     }
-    // SDfsdfsd
 }

@@ -25,10 +25,12 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         usernameEditText = (EditText) findViewById(R.id.usernameEditText);
+        usernameEditText.setText("dreyna3"); // DEBUG
         passwordEditText= (EditText) findViewById(R.id.passwordEditText);
+        passwordEditText.setText("StarKiller"); // DEBUG
         db = new DBHelper(this);
 
-//        db.deleteDatabaseDEBUG();
+        db.deleteDatabaseDEBUG();
 
         allProfilesList = db.getAllProfiles();
     }
@@ -71,7 +73,6 @@ public class LoginActivity extends AppCompatActivity {
             return;
         }
 
-
         Profile newProfile = new Profile(usernameText,passwordText);
         boolean isUnique = false;
 
@@ -98,6 +99,7 @@ public class LoginActivity extends AppCompatActivity {
             db.addProfile(newProfile);
             Intent toMainMenuIntent = new Intent(this, MainMenuActivity.class);
             toMainMenuIntent.putExtra("userProfile", newProfile);
+            Toast.makeText(this, "Created new account: " + newProfile.getUsername(), Toast.LENGTH_SHORT).show();
             startActivity(toMainMenuIntent);
         }
     }

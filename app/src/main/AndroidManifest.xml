@@ -26,9 +26,13 @@
         <activity android:name=".WriteReviewActivity"/>
         <activity android:name=".MoviesMenuActivity"/>
         <activity android:name=".ReviewsMenuActivity"/>
-        <activity android:name=".ListAllReviews">
+        <activity android:name=".ListAllReviewsActivity">
         </activity>
         <activity android:name=".MovieDetailsActivity">
+        </activity>
+        <activity android:name=".MoviesReviewsActivity">
+        </activity>
+        <activity android:name=".DeleteReviewActivity">
         </activity>
     </application>
 
