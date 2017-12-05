@@ -34,4 +34,11 @@ private Profile userProfile;
         intent.putExtra("userImage", imageUri.toString());
         startActivity(intent);
     }
+
+    public void toTrendingClick(View view) {
+        Intent intent = new Intent(this, TopTrendingMovies.class);
+        intent.putExtra("userProfile", userProfile);
+        intent.putExtra("userImage", imageUri.toString());
+        startActivity(intent);
+    }
 }
