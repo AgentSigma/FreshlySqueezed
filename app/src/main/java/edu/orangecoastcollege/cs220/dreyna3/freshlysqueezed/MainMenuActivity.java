@@ -36,7 +36,9 @@ public class MainMenuActivity extends AppCompatActivity {
         String uri = "android.resource://edu.orangecoastcollege.cs220.dreyna3.freshsqueezed/drawable/"
                 + userProfile.getImage();
         imageUri=getUriFromResource(this,R.drawable.default_profile_image);
+
         profileImageView.setImageURI(imageUri);
+
 
         Intent fromIntent = getIntent();
 
@@ -123,12 +125,14 @@ public class MainMenuActivity extends AppCompatActivity {
     public void toReviewsClick(View view) {
         Intent toReviewIntent = new Intent(this, ReviewsMenuActivity.class);
         toReviewIntent.putExtra("userProfile", userProfile);
+        toReviewIntent.putExtra("userImage", imageUri.toString());
         startActivity(toReviewIntent);
     }
 
     public void toMoviesClick(View view) {
         Intent intent= new Intent(this, MoviesMenuActivity.class);
         intent.putExtra("userProfile", userProfile);
+        intent.putExtra("userImage", imageUri.toString());
         startActivity(intent);
     }
     // SDfsdfsd
