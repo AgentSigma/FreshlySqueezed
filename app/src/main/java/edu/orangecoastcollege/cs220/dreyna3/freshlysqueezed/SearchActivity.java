@@ -68,8 +68,8 @@ public class SearchActivity extends AppCompatActivity {
             else {
                 mMovieListAdapter.clear();
                 for (Movie c : allMoviesList)
-                    if (c.getMovieTitle().toUpperCase().startsWith(entry)
-                            || c.getGenre().toUpperCase().startsWith(entry))
+                    if (c.getMovieTitle().toUpperCase().contains(entry)
+                            || c.getGenre().toUpperCase().contains(entry))
                         mMovieListAdapter.add(c);
             }
         }
