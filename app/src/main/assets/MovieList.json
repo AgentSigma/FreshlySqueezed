@@ -3,86 +3,128 @@
     {
       "Title": "The Shawshank Redemption",
       "Genre": "Crime, Drama",
-      "Rating": "4.7",
+      "Rating": "4.8",
       "Description": "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
-      "ImageName": "Shawshank"
+      "ImageName": "shawshank"
     },
     {
       "Title": "The Godfather",
       "Genre": "Crime, Drama",
-      "Rating": "4.6",
+      "Rating": "4.7",
       "Description": "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.",
-      "ImageName": "Godfather"
+      "ImageName": "godfather"
     },
     {
       "Title": "The Dark Knight",
       "Genre": "Action, Crime, Drama",
-      "Rating": "4.5",
+      "Rating": "4.6",
       "Description": "When the menace known as the Joker emerges from his mysterious past, he wreaks havoc and chaos on the people of Gotham, the Dark Knight must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
-      "ImageName": "Darkknight"
+      "ImageName": "darkknight"
     },
     {
       "Title": "The Godfather: Part II",
       "Genre": "Crime, Drama",
-      "Rating": "4.5",
+      "Rating": "4.6",
       "Description": "The early life and career of Vito Corleone in 1920s New York City is portrayed, while his son, Michael, expands and tightens his grip on the family crime syndicate.",
-      "ImageName": "GodfatherII"
+      "ImageName": "godfather2"
     },
     {
       "Title": "Pulp Fiction",
       "Genre": "Crime, Drama",
-      "Rating": "4.5",
+      "Rating": "4.6",
       "Description": "The lives of two mob hit men, a boxer, a gangster's wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
-      "ImageName": "PulpFiction"
+      "ImageName": "pulpfiction"
     },
     {
       "Title": "Schindler's List",
       "Genre": "Biography, Drama, History",
       "Rating": "4.5",
       "Description": "In German-occupied Poland during World War II, Oskar Schindler gradually becomes concerned for his Jewish workforce after witnessing their persecution by the Nazi Germans.",
-      "ImageName": "SchindlersList"
+      "ImageName": "schindlerslist"
     },
     {
       "Title": "The Lord of the Rings: Return of the King",
       "Genre": "Adventure, Drama, Fantasy",
       "Rating": "4.5",
       "Description": "Gandalf and Aragorn lead the World of Men against Sauron's army to draw his gaze from Frodo and Sam as they approach Mount Doom with the One Ring.",
-      "ImageName": "LOTRReturnOfTheKing"
+      "ImageName": "lotrreturnoftheking"
     },
     {
       "Title": "12 Angry Men",
       "Genre": "Crime, Drama",
       "Rating": "4.5",
       "Description": "A jury holdout attempts to prevent a miscarriage of justice by forcing his colleagues to reconsider the evidence.",
-      "ImageName": "AngryMen"
+      "ImageName": "angrymen"
     },
     {
       "Title": "The Good, the Bad, and the Ugly",
       "Genre": "Western",
       "Rating": "4.5",
       "Description": "A bounty hunting scam joins two men in an uneasy alliance against a third in a race to find a fortune in gold buried in a remote cemetery.",
-      "ImageName": "GoodBadUgly"
+      "ImageName": "goodbadugly"
     },
     {
       "Title": "Inception",
       "Genre": "Action, Adventure, Sci-Fi",
       "Rating": "4.4",
       "Description": "A thief, who steals corporate secrets through use of dream-sharing technology, is given the inverse task of planting an idea into the mind of a CEO.",
-      "ImageName": "Inception"
+      "ImageName": "inception"
     },
      {
       "Title": "The Lord of the Rings: The Fellowship of the Ring ",
       "Genre": "Adventure, Drama, Fantasy",
       "Rating": "4.4",
       "Description": "While Frodo and Sam edge closer to Mordor with the help of the shifty Gollum, the divided fellowship makes a stand against Sauron's new ally, Saruman, and his hordes of Isengard.",
-      "ImageName": "LOTRFellowship"
+      "ImageName": "lotrfellowship"
     },
     {
       "Title": "Fight Club",
       "Genre": "Drama",
       "Rating": "4.4",
       "Description": "An insomniac office worker, looking for a way to change his life, crosses paths with a devil-may-care soap maker, forming an underground fight club that evolves into something much, much more.",
-      "ImageName": "FightClub"
+      "ImageName": "fightclub"
+    },
+    {
+      "Title": "Forrest Gump",
+      "Genre": "Drama, Romance",
+      "Rating": "4.4",
+      "Description": "JFK, LBJ, Vietnam, Watergate, and other history unfold through the perspective of an Alabama man with an IQ of 75.",
+      "ImageName": "forestgump"
+    },
+    {
+      "Title": "Star Wars: Episode V - The Empire Strikes Back",
+      "Genre": "Action, Adventure, Fantasy",
+      "Rating": "4.4",
+      "Description": "After the rebels are overpowered by the Empire on their newly established base, Luke Skywalker begins Jedi training with Yoda. His friends accept shelter from a questionable ally as Darth Vader hunts them in a plan to capture Luke.",
+      "ImageName": "starwars5"
+    },
+    {
+      "Title": "Star Wars: Episode IV - A New Hope",
+      "Genre": "Adventure, Drama, Fantasy",
+      "Rating": "4.4",
+      "Description": "Luke Skywalker joins forces with a Jedi Knight, a cocky pilot, a Wookiee and two droids to save the galaxy from the Empire's world-destroying battle-station while also attempting to rescue Princess Leia from the evil Darth Vader.",
+      "ImageName": "starwars4"
+    },
+    {
+      "Title": "Goodfellas",
+      "Genre": "Biography, Crime, Drama",
+      "Rating": "4.4",
+      "Description": "The story of Henry Hill and his life in the mob, covering his relationship with his wife Karen Hill and his Mob partners Jimmy Conway and Tommy DeVito in the Italian-American crime syndicate.",
+      "ImageName": "goodfellas"
+    },
+    {
+      "Title": "The Matrix",
+      "Genre": "Action, Sci-Fi",
+      "Rating": "4.4",
+      "Description": "A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.",
+      "ImageName": "matrix"
+    },
+    {
+      "Title": "One Flew Over the Cuckoo's Nest",
+      "Genre": "Drama",
+      "Rating": "4.4",
+      "Description": "",
+      "ImageName": "cuckoosnest"
     }
   ]
 }
