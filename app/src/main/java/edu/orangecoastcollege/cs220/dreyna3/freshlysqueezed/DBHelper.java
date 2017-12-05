@@ -54,7 +54,6 @@ public class DBHelper extends SQLiteOpenHelper {
                 + KEY_FIELD_ID + " INTEGER PRIMARY KEY, "
                 + FIELD_USERNAME + " TEXT, "
                 + FIELD_PASSWORD + " TEXT, "
-                + FIELD_MOVIESTRING + " TEXT, "
                 + FIELD_IMAGENAME + " TEXT)";
         sqLiteDatabase.execSQL(table);
     }
@@ -76,6 +75,25 @@ public class DBHelper extends SQLiteOpenHelper {
         values.put(FIELD_IMAGENAME, profile.getImage());
 
         db.insert(DATABASE_TABLE, null, values);
+        db.close();
+    }
+
+    public void addReview(Review review){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+
+        values.put(FIELD_REVIEWUSERNAME, review.getAuthor());
+        values.put(FIELD_REVIEW, review.getReview());
+        values.put(FIELD_REVIEWMOVIETITLE, review.getTitle());
+        values.put(FIELD_REVIEWRATING, review.getRating());
+
+        db.insert(DATABASE_REVIEWTABLE, null, values);
+        db.close();
+    }
+    public void deleteReview(Review review){
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(DATABASE_REVIEWTABLE, KEY_FIELD_REVIEWID + " = ?",
+                new String[]{String.valueOf(review.getId())});
         db.close();
     }
 
@@ -142,12 +160,16 @@ public class DBHelper extends SQLiteOpenHelper {
         if (cursor.moveToNext()){
             do{
                 Review review = new Review(
+//                values.put(FIELD_REVIEWUSERNAME, username);
+//                values.put(FIELD_REVIEW, review.getReview());
+//                values.put(FIELD_REVIEWMOVIETITLE, review.getTitle());
+//                values.put(FIELD_REVIEWRATING, review.getRating());
 
                         cursor.getInt(0), // id
-                        cursor.getString(1), // Author
-                        cursor.getString(2), // title
-                        cursor.getFloat(3), // review rating
-                        cursor.getString(4) // the review
+                        cursor.getString(1), // author
+                        cursor.getString(2), // review
+                        cursor.getString(3), // title
+                        cursor.getFloat(4) // rating
                 );
                 reviewList.add(review);
 

@@ -1,62 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="edu.orangecoastcollege.cs220.dreyna3.freshlysqueezed.WriteReviewActivity">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="15dp"
+                tools:context="edu.orangecoastcollege.cs220.dreyna3.freshlysqueezed.WriteReviewActivity"
+    android:background="@color/lightYellow">
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/writeReviewProfileImage"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        app:srcCompat="@drawable/rough_logo"
-        tools:layout_editor_absoluteX="152dp"
-        tools:layout_editor_absoluteY="27dp" />
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/default_profile_image"/>
 
     <TextView
         android:id="@+id/textView7"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/writeReviewProfileImage"
         android:fontFamily="sans-serif-smallcaps"
         android:text="Write a Review"
-        android:textSize="30sp"
-        tools:layout_editor_absoluteX="92dp"
-        tools:layout_editor_absoluteY="149dp" />
+        android:textAlignment="center"
+        android:textSize="30sp"/>
 
     <EditText
-        android:id="@+id/editText"
-        android:layout_width="wrap_content"
+        android:id="@+id/writeReviewTitleEditText"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/textView7"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Movie Title Name"
-        tools:layout_editor_absoluteX="83dp"
-        tools:layout_editor_absoluteY="227dp" />
-
-    <RatingBar
-        android:id="@+id/ratingBar2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="72dp"
-        tools:layout_editor_absoluteY="307dp"/>
+        android:hint="Movie Title Name"
+        android:inputType="text"
+        android:textAlignment="center"/>
 
     <TextView
         android:id="@+id/textView8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/writeReviewTitleEditText"
+        android:text="Rate Movie"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textColor="@color/colorPrimaryDark"/>
+
+    <RatingBar
+        android:id="@+id/writeReviewRatingBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Rate Movie"
-        tools:layout_editor_absoluteX="157dp"
-        tools:layout_editor_absoluteY="288dp"/>
+        android:layout_below="@id/textView8"
+        android:layout_centerHorizontal="true"
+        android:rating="2.5"/>
 
     <EditText
-        android:id="@+id/editText3"
-        android:layout_width="296dp"
-        android:layout_height="135dp"
+        android:id="@+id/writeReviewTextEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/writeReviewRatingBar"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Write your Review:"
-        tools:layout_editor_absoluteX="44dp"
-        tools:layout_editor_absoluteY="364dp"/>
+        android:hint="Write your Review"
+        android:inputType="textPersonName"/>
 
-</android.support.constraint.ConstraintLayout>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="Submit Review"
+        style="@style/Base.Widget.AppCompat.Button.Colored"
+        android:onClick="submitReviewClick"/>
+
+</RelativeLayout>

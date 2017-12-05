@@ -15,12 +15,12 @@ private Profile userProfile;
         setContentView(R.layout.activity_movies_menu);
         Intent intent= getIntent();
         userProfile= intent.getExtras().getParcelable("userProfile");
-    imageUri=Uri.parse(intent.getStringExtra("userImage"));
+        imageUri=Uri.parse(intent.getStringExtra("userImage"));
 
 
     }
 
-    public void top5MoviesMenuButton(View view) {
+    public void toTopReviewsClick(View view) {
         Intent intent= new Intent(this, TopReviewsActivity.class);
         intent.putExtra("userProfile", userProfile);
         intent.putExtra("userImage", imageUri);
@@ -28,10 +28,10 @@ private Profile userProfile;
         startActivity(intent);
     }
 
-    public void searchButton(View view) {
+    public void toSearchClick(View view) {
         Intent intent= new Intent(this, SearchActivity.class);
         intent.putExtra("userProfile", userProfile);
-        intent.putExtra("userImage", imageUri);
+        intent.putExtra("userImage", imageUri.toString());
         startActivity(intent);
     }
 }

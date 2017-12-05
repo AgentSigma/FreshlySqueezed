@@ -2,38 +2,40 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <TextView
-        android:id="@+id/ReviewmovieTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Home"
-        android:textColor="@color/colorPrimaryDark"
-        android:layout_marginTop="12dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+    android:layout_height="match_parent"
+    android:background="@color/lightYellow"
+    android:padding="15dp">
 
     <ImageView
-        android:id="@+id/MovieImageView"
+        android:id="@+id/listReviewsProfileImage"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        app:srcCompat="@mipmap/ic_launcher"
-        android:layout_below="@+id/ReviewmovieTitle"
+        app:srcCompat="@drawable/default_profile_image"
         android:layout_centerHorizontal="true" />
 
     <TextView
-        android:id="@+id/MovieNameItem"
+        android:id="@+id/listReviewsTitleTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/MovieImageView"
+        android:layout_below="@+id/listReviewsProfileImage"
         android:layout_centerHorizontal="true"
-        android:text="Reviews"
-        android:textSize="36sp" />
+        android:text="My Reviews"
+        android:textSize="36sp"
+        android:textColor="@color/black"/>
 
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/MovieNameItem" />
+        android:layout_below="@+id/button6"
+        android:id="@+id/listReviewsListView"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/listReviewsTitleTextView"
+        android:layout_centerHorizontal="true"
+        android:text="Sort Alphabetically"
+        android:id="@+id/button6"
+        android:onClick="listReviewsAlphabetically"/>
 
 </RelativeLayout>

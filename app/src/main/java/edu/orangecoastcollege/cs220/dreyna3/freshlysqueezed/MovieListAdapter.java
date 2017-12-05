@@ -2,6 +2,7 @@ package edu.orangecoastcollege.cs220.dreyna3.freshlysqueezed;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.res.Resources;
 import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -38,12 +39,11 @@ public class MovieListAdapter extends ArrayAdapter<Movie> {
 
     public View getView(int pos, View convertView, ViewGroup parent)
     {
-
-
         LayoutInflater inflater =
                 (LayoutInflater) mContext.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
         View view = inflater.inflate(mResourceId, null);
         Movie movies = mMovieList.get(pos);
+
         MovieListLinearLayout =
                 (LinearLayout) view.findViewById(R.id.MovieDescriptionLinearLyaout);
         descriptionTextView   =
@@ -54,12 +54,15 @@ public class MovieListAdapter extends ArrayAdapter<Movie> {
                 (RatingBar) view.findViewById(R.id.MovieratingBarItem);
         MovieImageView=
                 (ImageView) view.findViewById(R.id.MovieImageView);
+
         nameTextView.setText(movies.getMovieTitle());
         descriptionTextView.setText(movies.getDescription());
         RatingBar.setRating(movies.getRating());
-        String movieName= movies.getImageName();
+        RatingBar.setEnabled(false);
 
-        MovieImageView.setImageURI(Uri.parse("android.resource://edu.orangecoastcollege.cs220.dreyna3.freshsqueezed/drawable/"+movieName));
+        MovieImageView.setImageURI(Uri.parse(
+                "android.resource://edu.orangecoastcollege.cs220.dreyna3.freshlysqueezed/drawable/"
+                        + movies.getImageName()));
         MovieListLinearLayout.setTag(movies);
         return view;
     }

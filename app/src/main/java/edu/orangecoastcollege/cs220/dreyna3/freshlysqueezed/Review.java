@@ -11,17 +11,17 @@ public class Review {
     private float rating;
     private String review;
 
-    public Review(String author,String title, float rating, String review) {
+    public Review(String author,String review, String title, float rating) {
         id=-1;
-        this.Author=author;
+        this.Author = author;
         this.title = title;
         this.rating = rating;
         this.review = review;
     }
 
-    public Review(int id, String author, String title, float rating, String review) {
+    public Review(int id, String author, String review, String title, float rating) {
         this.id = id;
-        Author = author;
+        this.Author = author;
         this.title = title;
         this.rating = rating;
         this.review = review;

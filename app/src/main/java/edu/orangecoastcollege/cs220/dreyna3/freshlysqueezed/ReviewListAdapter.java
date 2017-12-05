@@ -21,44 +21,45 @@ import java.util.List;
 
 public class ReviewListAdapter extends ArrayAdapter<Review> {
     private Context mContext;
-    private List<Review> mLogsList = new ArrayList<>();
+    private List<Review> mReviewList = new ArrayList<>();
     private int mResourceId;
-    private LinearLayout ReviewListLinearLayout;
+    private LinearLayout mReviewItemLinearLayout;
     private TextView titleTextView;
-    private TextView AuthorTextView;
+    private TextView mAuthorTextView;
     private RatingBar ReviewRatingBar;
-    private TextView descriptionTextView;
+    private TextView reviewTextView;
 
-    public ReviewListAdapter(Context c, int rId, List<Review> logs) {
-        super(c, rId, logs);
+    public ReviewListAdapter(Context c, int rId, List<Review> reviews) {
+        super(c, rId, reviews);
         mContext = c;
         mResourceId = rId;
-        mLogsList = logs;
+        mReviewList = reviews;
     }
 
     public View getView(int pos, View convertView, ViewGroup parent) {
 
-
         LayoutInflater inflater =
                 (LayoutInflater) mContext.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
         View view = inflater.inflate(mResourceId, null);
-        Review review = mLogsList.get(pos);
-        ReviewListLinearLayout =
-                (LinearLayout) view.findViewById(R.id.ReviewItemLinearLayout);
-        descriptionTextView =
-                (TextView) view.findViewById(R.id.ReviewItemText);
-        titleTextView =
-                (TextView) view.findViewById(R.id.ReviewmovieTitle);
-        AuthorTextView =
-                (TextView) view.findViewById(R.id.authorTextViewItem);
-        ReviewRatingBar =
-                (RatingBar) view.findViewById(R.id.ReviewratingBar);
+        Review review = mReviewList.get(pos);
 
-        titleTextView.setText(review.getTitle());
-        descriptionTextView.setText(review.getReview());
+        mReviewItemLinearLayout =
+                (LinearLayout) view.findViewById(R.id.reviewItemLinearLayout);
+        mAuthorTextView =
+                (TextView) view.findViewById(R.id.reviewItemAuthorTextView);
+        titleTextView =
+                (TextView) view.findViewById(R.id.reviewItemMovieTitle);
+        ReviewRatingBar =
+                (RatingBar) view.findViewById(R.id.reviewItemRatingBar);
+        reviewTextView =
+                (TextView) view.findViewById(R.id.reviewItemReviewText);
+
+        mAuthorTextView.setText("Author: " + review.getAuthor());
+        titleTextView.setText("Title: " + review.getTitle());
         ReviewRatingBar.setRating(review.getRating());
-        AuthorTextView.setText(review.getAuthor());
-        ReviewListLinearLayout.setTag(review);
+        reviewTextView.setText(review.getReview());
+
+        mReviewItemLinearLayout.setTag(review);
         return view;
     }
 }

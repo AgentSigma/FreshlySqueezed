@@ -10,6 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class SearchActivity extends AppCompatActivity {
@@ -18,8 +19,6 @@ public class SearchActivity extends AppCompatActivity {
     private MovieListAdapter mMovieListAdapter;
     private List<Movie> allMoviesList;
     private Profile userProfile;
-    private ImageView profileImage;
-    private Uri imageUri;
 
 
     @Override
@@ -28,10 +27,8 @@ public class SearchActivity extends AppCompatActivity {
         setContentView(R.layout.activity_search);
 
         movieSearchListView = (ListView) findViewById(R.id.movieSearchListView);
-        profileImage=(ImageView) findViewById(R.id.searchUserProfileImageView);
-        userProfile= getIntent().getParcelableExtra("userProfile");
-        imageUri= Uri.parse(getIntent().getStringExtra("userImage"));
-        profileImage.setImageURI(imageUri);
+        userProfile = getIntent().getParcelableExtra("userProfile");
+        allMoviesList = new ArrayList<>();
         try {
             allMoviesList = MovieJSONLoader.loadJSONFromAsset(this);
         } catch (IOException e) {
@@ -43,7 +40,7 @@ public class SearchActivity extends AppCompatActivity {
     }
     public void toMovieDetailsActivity(View v){
         LinearLayout selected = (LinearLayout) v;
-        Movie m = (Movie) v.getTag();
+        Movie m = (Movie) selected.getTag();
         Intent toMovieDetailsIntent = new Intent(this, MovieDetailsActivity.class);
         toMovieDetailsIntent.putExtra("selectedMovie", m);
         startActivity(toMovieDetailsIntent);

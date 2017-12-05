@@ -23,8 +23,14 @@ public class ReviewsMenuActivity extends AppCompatActivity {
     }
 
     public void toListReviewsClick(View view) {
-        Intent toListReviewsIntent = new Intent(this, ListAllReviews.class);
+        Intent toListReviewsIntent = new Intent(this, ListAllReviewsActivity.class);
         toListReviewsIntent.putExtra("userProfile", userProfile);
         startActivity(toListReviewsIntent);
+    }
+
+    public void toDeleteReviewsClick(View view) {
+        Intent toDeleteReviewsIntent = new Intent(this, DeleteReviewActivity.class);
+        toDeleteReviewsIntent.putExtra("userProfile", userProfile);
+        startActivity(toDeleteReviewsIntent);
     }
 }

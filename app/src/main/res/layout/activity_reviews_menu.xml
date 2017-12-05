@@ -5,7 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="edu.orangecoastcollege.cs220.dreyna3.freshlysqueezed.ReviewsMenuActivity"
-    android:background="@color/grey">
+    android:background="@color/lightYellow"
+    android:padding="15dp">
+
+    <ImageView
+        android:id="@+id/reviewMenuProfileImage"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/default_profile_image"
+        android:onClick="toMainMenuClick"/>
 
     <Button
         android:id="@+id/button"
@@ -17,7 +27,8 @@
         android:text="Delete reviews"
         android:layout_below="@+id/button3"
         android:layout_alignLeft="@+id/button3"
-        android:layout_alignStart="@+id/button3" />
+        android:layout_alignStart="@+id/button3"
+        android:onClick="toDeleteReviewsClick"/>
 
     <TextView
         android:id="@+id/ReviewmovieTitle"

@@ -14,7 +14,7 @@ public class Profile implements Parcelable{
         id=-1;
         username = newUsername;
         password = newPassword;
-        imageName = "default_profile_image.png";
+        imageName = "default_profile_image";
     }
 
     public Profile(int id, String username, String password, String imageName){
