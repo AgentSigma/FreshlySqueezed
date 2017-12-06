@@ -25,16 +25,23 @@ public class ReviewsMenuActivity extends AppCompatActivity {
         userImage = (ImageView) findViewById(R.id.reviewMenuProfileImage);
 
         userProfile = getIntent().getExtras().getParcelable("userProfile");
-        mUri = Uri.parse(userProfile.getImage());
-        try {
-            Bitmap bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), mUri);
-            bitmap = Bitmap.createScaledBitmap(bitmap,
-                    (int) (bitmap.getWidth()*0.3),
-                    (int) (bitmap.getHeight()*0.3), true);
 
-            userImage.setImageBitmap(bitmap);
-        } catch (IOException e) {
-            Log.e("ListAllReviews", "Error getting bitmap from: " + mUri.toString(), e);
+        if (userProfile.getImage()
+                .equals("android.resource://edu.orangecoastcollege.cs220.dreyna3." +
+                        "freshlysqueezed/drawable/default_profile_image"))
+            userImage.setImageURI(Uri.parse(userProfile.getImage()));
+        else {
+            mUri = Uri.parse(userProfile.getImage());
+            try {
+                Bitmap bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), mUri);
+                bitmap = Bitmap.createScaledBitmap(bitmap,
+                        (int) (bitmap.getWidth() * 0.3),
+                        (int) (bitmap.getHeight() * 0.3), true);
+
+                userImage.setImageBitmap(bitmap);
+            } catch (IOException e) {
+                Log.e("ReviewsMenuActivity", "Error getting bitmap from: " + mUri.toString(), e);
+            }
         }
     }
 

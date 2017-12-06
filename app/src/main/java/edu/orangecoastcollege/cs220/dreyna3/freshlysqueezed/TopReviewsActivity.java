@@ -46,16 +46,22 @@ public class TopReviewsActivity extends AppCompatActivity {
                 new ReviewListAdapter(this, R.layout.review_list_item, mFilteredReviews);
         top5MoviesListView.setAdapter(movieListAdapter);
 
-        mUri = Uri.parse(userProfile.getImage());
-        try {
-            Bitmap bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), mUri);
-            bitmap = Bitmap.createScaledBitmap(bitmap,
-                    (int) (bitmap.getWidth()*0.3),
-                    (int) (bitmap.getHeight()*0.3), true);
+        if (userProfile.getImage()
+                .equals("android.resource://edu.orangecoastcollege.cs220.dreyna3." +
+                        "freshlysqueezed/drawable/default_profile_image"))
+            mUserImage.setImageURI(Uri.parse(userProfile.getImage()));
+        else {
+            mUri = Uri.parse(userProfile.getImage());
+            try {
+                Bitmap bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), mUri);
+                bitmap = Bitmap.createScaledBitmap(bitmap,
+                        (int) (bitmap.getWidth() * 0.3),
+                        (int) (bitmap.getHeight() * 0.3), true);
 
-            mUserImage.setImageBitmap(bitmap);
-        } catch (IOException e) {
-            Log.e("ListAllReviews", "Error getting bitmap from: " + mUri.toString(), e);
+                mUserImage.setImageBitmap(bitmap);
+            } catch (IOException e) {
+                Log.e("MainMenuActivity", "Error getting bitmap from: " + mUri.toString(), e);
+            }
         }
     }
 
