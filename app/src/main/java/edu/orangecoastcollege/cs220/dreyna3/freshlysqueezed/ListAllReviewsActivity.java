@@ -72,9 +72,33 @@ public class ListAllReviewsActivity extends AppCompatActivity {
 
     public void deleteReviewClick(View v){}
 
-    public void listReviewsAlphabetically(View view) {
-        // TODO: Take current mReviewList, and sort alphabetically.
-        // Do mReviewListAdapater.notifyDataSetChanged(); to update the list on screen
-
+    public void listReviewsAlphabetically(View view)  {
+        int size = mFilteredReviews.size();
+        Review current;
+        Review prev;
+        int position;
+        for (int i = 1; i < size; i++)
+        {
+            current = mFilteredReviews.get(i);
+            prev = mFilteredReviews.get(i - 1);
+            position = i;
+            if (current.getTitle().compareTo(prev.getTitle()) < 0)
+            {
+                while (current.getTitle().compareTo(prev.getTitle()) < 0 && position > 1)
+                {
+                    mFilteredReviews.set(position, prev);
+                    position--;
+                    prev = mFilteredReviews.get(position - 1);
+                }
+                if (current.getTitle().compareTo(prev.getTitle()) < 0)
+                {
+                    mFilteredReviews.set(1, mFilteredReviews.get(0));
+                    mFilteredReviews.set(0, current);
+                }
+                else
+                    mFilteredReviews.set(position, current);
+            }
+            mReviewListAdapter.notifyDataSetChanged();
+        }
     }
 }
