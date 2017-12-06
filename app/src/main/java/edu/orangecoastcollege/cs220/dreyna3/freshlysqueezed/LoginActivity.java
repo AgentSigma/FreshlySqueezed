@@ -25,11 +25,10 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         usernameEditText = (EditText) findViewById(R.id.usernameEditText);
-        usernameEditText.setText("dreyna3"); // DEBUG
         passwordEditText= (EditText) findViewById(R.id.passwordEditText);
-        passwordEditText.setText("StarKiller"); // DEBUG
         db = new DBHelper(this);
 
+        // db.deleteDatabaseDEBUG();
 
         allProfilesList = db.getAllProfiles();
     }
@@ -41,7 +40,9 @@ public class LoginActivity extends AppCompatActivity {
 
         if (usernameEditText.getText().toString().equals("")
                 || passwordEditText.getText().toString().equals("")) {
-            Toast.makeText(LoginActivity.this, R.string.incorrect_input_Toast, Toast.LENGTH_SHORT).show();
+            Toast.makeText(LoginActivity.this, "Please enter any missing fields", Toast.LENGTH_SHORT).show();
+            usernameEditText.setError("Required");
+            passwordEditText.setError("Required");
         } else {
             for (Profile p : allProfilesList) {
                 if (p.getUsername().equals(usernameText) && p.getPassword().equals(passwordText)) {
@@ -49,7 +50,7 @@ public class LoginActivity extends AppCompatActivity {
                     intent.putExtra("userProfile", p);
                     loginSuccess = true;
                     resetViewText();
-                    Toast.makeText(this, "Welcome " + usernameText + "!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Welcome " + p.getUsername() + "!", Toast.LENGTH_SHORT).show();
                     startActivity(intent);
                 }
             }
@@ -67,13 +68,15 @@ public class LoginActivity extends AppCompatActivity {
 
     public void createAccountClick(View view) {
         String usernameText = usernameEditText.getText().toString();
-        String passwordText= passwordEditText.getText().toString();
+        String passwordText = passwordEditText.getText().toString();
         if (usernameText.equals("") || passwordText.equals("")){
             Toast.makeText(this, "Please enter any missing fields", Toast.LENGTH_SHORT).show();
+            usernameEditText.setError("Required");
+            passwordEditText.setError("Required");
             return;
         }
 
-        Profile newProfile = new Profile(usernameText,passwordText);
+        Profile newProfile = new Profile(usernameText, passwordText);
         boolean isUnique = false;
 
         // If no accounts on DB
@@ -89,8 +92,8 @@ public class LoginActivity extends AppCompatActivity {
                     usernameEditText.requestFocus();
                     break;
                 } else {
-                    newProfile = p;
                     isUnique = true;
+                    resetViewText();
                     break;
                 }
             }

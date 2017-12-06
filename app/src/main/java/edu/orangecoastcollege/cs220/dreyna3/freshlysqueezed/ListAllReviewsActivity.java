@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ListAllReviewsActivity extends AppCompatActivity {
@@ -19,6 +20,7 @@ public class ListAllReviewsActivity extends AppCompatActivity {
     private ImageView mProfileImageView;
     private ListView mReviewsListView;
     private List<Review> mReviewList;
+    private List<Review> mFilteredReviews;
     private ReviewListAdapter mReviewListAdapter;
     private Profile mUserProfile;
     private Uri mUri;
@@ -48,17 +50,18 @@ public class ListAllReviewsActivity extends AppCompatActivity {
 
         mDb = new DBHelper(this);
         mReviewList = mDb.getAllReivews();
-        filterForUsersReviews(mUserProfile.getUsername(), mReviewList);
-        mReviewListAdapter = new ReviewListAdapter(this, R.layout.review_list_item, mReviewList);
+        mFilteredReviews = new ArrayList<>(filterForUsersReviews(mUserProfile.getUsername(), mReviewList));
+        mReviewListAdapter = new ReviewListAdapter(this, R.layout.review_list_item, mFilteredReviews);
 
         mReviewsListView.setAdapter(mReviewListAdapter);
-        mReviewListAdapter.notifyDataSetChanged();
     }
 
-    private void filterForUsersReviews(String username, List<Review> reviewList) {
+    private List<Review> filterForUsersReviews(String username, List<Review> reviewList) {
+        List<Review> filteredReviewList = new ArrayList<>();
         for (Review r : reviewList)
-            if (!r.getAuthor().equals(username))
-                reviewList.remove(r);
+            if (r.getAuthor().equals(username))
+                filteredReviewList.add(r);
+        return filteredReviewList;
     }
 
     public void deleteReviewClick(View v){}
