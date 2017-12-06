@@ -16,14 +16,12 @@ public class TopTrendingMovies extends AppCompatActivity {
     private ListView mTrendingListView;
     private MovieListAdapter mMovieListAdapter;
     private List<Movie> mTrendingList;
-    private MovieJSONLoader mJSONLoader;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_top_trending_movies);
 
-        mJSONLoader = new MovieJSONLoader();
         mTrendingListView = (ListView) findViewById(R.id.trendingMoviesListView);
         try {
             mTrendingList = MovieJSONLoader.loadJSONFromAsset(this);

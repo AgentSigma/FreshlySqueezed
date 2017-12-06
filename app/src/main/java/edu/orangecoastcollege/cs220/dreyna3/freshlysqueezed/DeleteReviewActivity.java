@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class DeleteReviewActivity extends AppCompatActivity {
@@ -15,6 +16,7 @@ public class DeleteReviewActivity extends AppCompatActivity {
     private DBHelper mDb;
     private ReviewListAdapter mReviewListAdapter;
     private List<Review> mReviewsList;
+    private List<Review> mFilterList;
     private Profile mUserProfile;
 
     @Override
@@ -27,8 +29,8 @@ public class DeleteReviewActivity extends AppCompatActivity {
         mUserProfile = getIntent().getExtras().getParcelable("userProfile");
         mDb = new DBHelper(this);
         mReviewsList = mDb.getAllReivews();
-        filterForUsersReviews(mUserProfile.getUsername(), mReviewsList);
-        mReviewListAdapter = new ReviewListAdapter(this, R.layout.review_list_item, mReviewsList);
+        mFilterList = new ArrayList<>(filterForUsersReviews(mUserProfile.getUsername(), mReviewsList));
+        mReviewListAdapter = new ReviewListAdapter(this, R.layout.review_list_item, mFilterList);
         mReviewsListView.setAdapter(mReviewListAdapter);
     }
 
@@ -37,7 +39,7 @@ public class DeleteReviewActivity extends AppCompatActivity {
         Review reviewToDelete = (Review) v.getTag();
         for (Review r : mReviewsList){
             if (reviewToDelete.equals(r)) {
-                mReviewsList.remove(r);
+                mFilterList.remove(r);
                 mDb.deleteReview(r);
                 break;
             }
@@ -45,9 +47,11 @@ public class DeleteReviewActivity extends AppCompatActivity {
         mReviewListAdapter.notifyDataSetChanged();
     }
 
-    private void filterForUsersReviews(String username, List<Review> reviewList) {
+    private List<Review> filterForUsersReviews(String username, List<Review> reviewList) {
+        List<Review> filteredOutList = new ArrayList<>();
         for (Review r : reviewList)
-            if (!r.getAuthor().equals(username))
-                reviewList.remove(r);
+            if (r.getAuthor().equals(username))
+                filteredOutList.add(r);
+        return filteredOutList;
     }
 }

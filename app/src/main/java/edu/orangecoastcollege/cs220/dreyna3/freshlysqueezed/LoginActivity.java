@@ -44,6 +44,8 @@ public class LoginActivity extends AppCompatActivity {
             usernameEditText.setError("Required");
             passwordEditText.setError("Required");
         } else {
+            // Re-update the list in case someone logs out, and onCreate isnt called to update the list again
+            allProfilesList = db.getAllProfiles();
             for (Profile p : allProfilesList) {
                 if (p.getUsername().equals(usernameText) && p.getPassword().equals(passwordText)) {
                     Intent intent = new Intent(this, MainMenuActivity.class);

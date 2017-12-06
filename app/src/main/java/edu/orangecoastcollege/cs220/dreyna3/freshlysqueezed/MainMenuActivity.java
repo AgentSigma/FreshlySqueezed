@@ -82,8 +82,19 @@ public class MainMenuActivity extends AppCompatActivity {
                         (int) (bitmap.getHeight()*0.3), true); // Scale down to 1/3 of resolution
 
                 mProfileImageView.setImageBitmap(bitmap);
-                mUserProfile.setImageName(imageUri.toString());
+
+                // Update the profile to be the one from the database, so we can update
+                // the image properly using the database-assigned key for the object
+                List<Profile> debugProfiles = mDb.getAllProfiles();
+                for (Profile p : debugProfiles){
+                    if (mUserProfile.getUsername().equals(p.getUsername())) {
+                        mUserProfile = p;
+                        mUserProfile.setImageName(imageUri.toString());
+                    }
+                }
+
                 mDb.updateProfile(mUserProfile);
+
                 Toast.makeText(this, "Image set to " + imageUri.toString(), Toast.LENGTH_LONG).show();
             } catch (IOException e) {
                 Log.e("MainMenuActivity", "Error getting bitmap from: " + mUri.toString(), e);

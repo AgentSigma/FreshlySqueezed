@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by dreyna3 on 11/21/2017.
@@ -101,11 +102,10 @@ public class DBHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
 
-        values.put(FIELD_USERNAME, profile.getUsername());
-        values.put(FIELD_PASSWORD, profile.getPassword());
         values.put(FIELD_IMAGENAME, profile.getImage());
         db.update(DATABASE_TABLE, values, KEY_FIELD_ID + " = ?",
                 new String[]{String.valueOf(profile.getId())});
+
         db.close();
     }
 
