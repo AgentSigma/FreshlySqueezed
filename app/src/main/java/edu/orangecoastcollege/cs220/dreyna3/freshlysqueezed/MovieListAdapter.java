@@ -3,7 +3,10 @@ package edu.orangecoastcollege.cs220.dreyna3.freshlysqueezed;
 import android.app.Activity;
 import android.content.Context;
 import android.content.res.Resources;
+import android.graphics.Bitmap;
 import android.net.Uri;
+import android.provider.MediaStore;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +16,7 @@ import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,6 +33,7 @@ public class MovieListAdapter extends ArrayAdapter<Movie> {
     private TextView descriptionTextView;
     private RatingBar RatingBar;
     private ImageView MovieImageView;
+    private Uri mUri;
 
     public MovieListAdapter(Context c, int rId, List<Movie> movie) {
         super(c, rId, movie);
@@ -60,9 +65,18 @@ public class MovieListAdapter extends ArrayAdapter<Movie> {
         RatingBar.setRating(movies.getRating());
         RatingBar.setEnabled(false);
 
-        MovieImageView.setImageURI(Uri.parse(
+        // TODO: Find out how to init posterBitmap to the image for the movie
+        mUri = Uri.parse(
                 "android.resource://edu.orangecoastcollege.cs220.dreyna3.freshlysqueezed/drawable/"
-                        + movies.getImageName()));
+                + movies.getImageName());
+        try {
+            Bitmap bitmap = MediaStore.Images.Media.getBitmap(mContext.getContentResolver(), mUri);
+            bitmap = Bitmap.createScaledBitmap(bitmap, 100, 150, true);
+            MovieImageView.setImageBitmap(bitmap);
+        } catch (IOException e) {
+            Log.e("MovieListAdapter", "Error getting bitmap from: " + mUri.toString(), e);
+        }
+
         MovieListLinearLayout.setTag(movies);
         return view;
     }

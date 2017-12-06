@@ -6,16 +6,19 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,35 +28,34 @@ public class MainMenuActivity extends AppCompatActivity {
     private static final int DENIED=PackageManager.PERMISSION_DENIED;
     static final int REQUEST_IMAGE_CAPTURE = 1;
 
-    private Profile userProfile;
+    private Profile mUserProfile;
     private Uri imageUri;
-    private ImageView profileImageView;
+    private ImageView mProfileImageView;
+    private Uri mUri;
+    private DBHelper mDb;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
 
+        mProfileImageView = (ImageView) findViewById(R.id.profileImageViewMainMenu);
+
+        mDb = new DBHelper(this);
         Intent fromIntent = getIntent();
-        userProfile = fromIntent.getExtras().getParcelable("userProfile");
+        mUserProfile = fromIntent.getExtras().getParcelable("userProfile");
 
-        profileImageView=(ImageView) findViewById(R.id.profileImageViewMainMenu) ;
-        String uri = "android.resource://edu.orangecoastcollege.cs220.dreyna3.freshsqueezed/drawable/"
-                + userProfile.getImage();
-        imageUri=getUriFromResource(this,R.drawable.default_profile_image);
+        mUri = Uri.parse(mUserProfile.getImage());
+        try {
+            Bitmap bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), mUri);
+            bitmap = Bitmap.createScaledBitmap(bitmap,
+                    (int) (bitmap.getWidth()*0.3),
+                    (int) (bitmap.getHeight()*0.3), true);
 
-        profileImageView.setImageURI(imageUri);
-    }
-    public static Uri getUriFromResource(Context context, int resID)
-    {
-        Resources res= context.getResources();
-        //Build a String in the form:
-        //android.resource://edu.orangecoastcollege.cs273.petprotector
-        String uri= ContentResolver.SCHEME_ANDROID_RESOURCE+"://"+ res.getResourcePackageName(resID)+ "/"
-                + res.getResourceTypeName(resID)+"/"
-                +res.getResourceEntryName(resID);
-        // parse the string in o rder to construc a URI
-        return Uri.parse(uri);
-
+            mProfileImageView.setImageBitmap(bitmap);
+        } catch (IOException e) {
+            Log.e("MainMenuActivity", "Error getting bitmap from: " + mUri.toString(), e);
+        }
     }
 
     public void logOutClick(View view) {
@@ -66,12 +68,24 @@ public class MainMenuActivity extends AppCompatActivity {
         if(requestCode==1 && resultCode==RESULT_OK && data!= null)
         {
             //data= data from the Gallery Intent(the image
-            imageUri= data.getData();
-            profileImageView.setImageURI(imageUri);
+            imageUri = data.getData();
+            try {
+                Bitmap bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), imageUri);
+                bitmap = Bitmap.createScaledBitmap(bitmap,
+                        (int) (bitmap.getWidth()*0.3),
+                        (int) (bitmap.getHeight()*0.3), true); // Scale down to 1/3 of resolution
+
+                mProfileImageView.setImageBitmap(bitmap);
+                mUserProfile.setImageName(imageUri.toString());
+                mDb.updateProfile(mUserProfile);
+                Toast.makeText(this, "Image set to " + imageUri.toString(), Toast.LENGTH_LONG).show();
+            } catch (IOException e) {
+                Log.e("MainMenuActivity", "Error getting bitmap from: " + mUri.toString(), e);
+            }
         }
         else
         {
-            Toast.makeText(MainMenuActivity.this, "image could not be pulled from camera", Toast.LENGTH_LONG).show();
+            Toast.makeText(MainMenuActivity.this, "No profile image selected", Toast.LENGTH_LONG).show();
         }
     }
 
@@ -106,30 +120,21 @@ public class MainMenuActivity extends AppCompatActivity {
         if(hasCameraPerm== GRANTED && hasReadPerm==GRANTED && hasWritePerm==GRANTED)
         {
             //lets open up gallery
-            Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-            if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
-                startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
-                takePic=true;
-            }
-            // start activity for aour results the picture that the user selected
-            if(takePic)
-                startActivityForResult(takePictureIntent,1);
-
+            Intent toGalleryIntent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+            startActivityForResult(toGalleryIntent, REQUEST_IMAGE_CAPTURE);
         }
 
     }
 
     public void toReviewsClick(View view) {
         Intent toReviewIntent = new Intent(this, ReviewsMenuActivity.class);
-        toReviewIntent.putExtra("userProfile", userProfile);
-        toReviewIntent.putExtra("userImage", imageUri.toString());
+        toReviewIntent.putExtra("userProfile", mUserProfile);
         startActivity(toReviewIntent);
     }
 
     public void toMoviesClick(View view) {
         Intent intent= new Intent(this, MoviesMenuActivity.class);
-        intent.putExtra("userProfile", userProfile);
-        intent.putExtra("userImage", imageUri.toString());
+        intent.putExtra("userProfile", mUserProfile);
         startActivity(intent);
     }
 }

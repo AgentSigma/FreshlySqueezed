@@ -14,7 +14,7 @@ public class Profile implements Parcelable{
         id=-1;
         username = newUsername;
         password = newPassword;
-        imageName = "default_profile_image";
+        imageName = "android.resource://edu.orangecoastcollege.cs220.dreyna3.freshlysqueezed/drawable/default_profile_image";
     }
 
     public Profile(int id, String username, String password, String imageName){
@@ -47,6 +47,10 @@ public class Profile implements Parcelable{
     public String getUsername(){
         return username;
         // t
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getPassword(){

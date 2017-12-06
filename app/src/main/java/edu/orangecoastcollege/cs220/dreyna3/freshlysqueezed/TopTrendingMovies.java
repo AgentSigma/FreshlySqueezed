@@ -1,7 +1,10 @@
 package edu.orangecoastcollege.cs220.dreyna3.freshlysqueezed;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import java.io.IOException;
@@ -54,5 +57,13 @@ public class TopTrendingMovies extends AppCompatActivity {
             i++;
         }
         return top5;
+    }
+
+    public void toMovieDetailsActivity(View v){
+            LinearLayout selected = (LinearLayout) v;
+            Movie m = (Movie) selected.getTag();
+            Intent toMovieDetailsIntent = new Intent(this, MovieDetailsActivity.class);
+            toMovieDetailsIntent.putExtra("selectedMovie", m);
+            startActivity(toMovieDetailsIntent);
     }
 }

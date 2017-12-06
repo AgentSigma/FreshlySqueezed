@@ -10,9 +10,9 @@
     <ImageView
         android:id="@+id/MovieImageView"
         android:layout_width="100dp"
-        android:layout_height="50dp"
+        android:layout_height="70dp"
         android:layout_weight="1"
-        app:srcCompat="@drawable/rough_logo" />
+        android:src="@drawable/rough_logo" />
 
     <LinearLayout
         android:layout_width="match_parent"

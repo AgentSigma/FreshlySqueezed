@@ -1,11 +1,18 @@
 package edu.orangecoastcollege.cs220.dreyna3.freshlysqueezed;
 
+import android.graphics.Bitmap;
+import android.net.Uri;
+import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.Toast;
+
+import java.io.IOException;
 
 public class WriteReviewActivity extends AppCompatActivity {
 
@@ -14,6 +21,8 @@ public class WriteReviewActivity extends AppCompatActivity {
     private RatingBar mRatingBar;
     private EditText mReviewEditText;
     private Profile mUserProfile;
+    private ImageView mUserImage;
+    private Uri mUri;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,9 +32,22 @@ public class WriteReviewActivity extends AppCompatActivity {
         mTitleEditText = (EditText) findViewById(R.id.writeReviewTitleEditText);
         mRatingBar = (RatingBar) findViewById(R.id.writeReviewRatingBar);
         mReviewEditText = (EditText) findViewById(R.id.writeReviewTextEditText);
+        mUserImage = (ImageView) findViewById(R.id.writeReviewProfileImage);
 
         mDb = new DBHelper(this);
         mUserProfile = getIntent().getExtras().getParcelable("userProfile");
+
+        mUri = Uri.parse(mUserProfile.getImage());
+        try {
+            Bitmap bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), mUri);
+            bitmap = Bitmap.createScaledBitmap(bitmap,
+                    (int) (bitmap.getWidth()*0.3),
+                    (int) (bitmap.getHeight()*0.3), true);
+
+            mUserImage.setImageBitmap(bitmap);
+        } catch (IOException e) {
+            Log.e("ListAllReviews", "Error getting bitmap from: " + mUri.toString(), e);
+        }
     }
 
     public void submitReviewClick(View view) {

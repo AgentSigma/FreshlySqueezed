@@ -7,6 +7,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MoviesReviewsActivity extends AppCompatActivity {
@@ -17,6 +18,7 @@ public class MoviesReviewsActivity extends AppCompatActivity {
     private ListView mListView;
     private ReviewListAdapter mReviewListAdapter;
     private String mMovieTitle;
+    private List<Review> filteredReviewsList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,17 +31,19 @@ public class MoviesReviewsActivity extends AppCompatActivity {
         mDb = new DBHelper(this);
         mReviewList = mDb.getAllReivews();
         mMovieTitle = getIntent().getStringExtra("selectedMovieTitle");
-        filterForMovie(mReviewList, mMovieTitle);
-        mReviewListAdapter = new ReviewListAdapter(this, R.layout.review_list_item, mReviewList);
+        filteredReviewsList = new ArrayList<>(filterForMovie(mReviewList, mMovieTitle));
+        mReviewListAdapter = new ReviewListAdapter(this, R.layout.review_list_item, filteredReviewsList);
 
         mListView.setAdapter(mReviewListAdapter);
         mTitleTextView.setText("Reviews For:\n" + mMovieTitle);
     }
 
-    private void filterForMovie(List<Review> filteredMoviesList, String movieTitle) {
-        for (Review r : filteredMoviesList)
-            if (!r.getTitle().equals(movieTitle))
-                filteredMoviesList.remove(r);
+    private List<Review> filterForMovie(List<Review> reviewsList, String movieTitle) {
+        List<Review> filteredReviews = new ArrayList<>();
+        for (Review r : reviewsList)
+            if (movieTitle.contains(r.getTitle()))
+                filteredReviews.add(r);
+        return filteredReviews;
     }
 
     public void deleteReviewClick(View v){}

@@ -21,6 +21,7 @@ public class SearchActivity extends AppCompatActivity {
     private ListView movieSearchListView;
     private MovieListAdapter mMovieListAdapter;
     private List<Movie> allMoviesList;
+    private List<Movie> filteredMoviesList;
     private Profile userProfile;
     private EditText mSearchEditText;
 
@@ -38,10 +39,11 @@ public class SearchActivity extends AppCompatActivity {
         allMoviesList = new ArrayList<>();
         try {
             allMoviesList = MovieJSONLoader.loadJSONFromAsset(this);
+            filteredMoviesList = new ArrayList<>(allMoviesList);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        mMovieListAdapter = new MovieListAdapter(this, R.layout.movie_list_item, allMoviesList);
+        mMovieListAdapter = new MovieListAdapter(this, R.layout.movie_list_item, filteredMoviesList);
 
         movieSearchListView.setAdapter(mMovieListAdapter);
     }
@@ -63,10 +65,10 @@ public class SearchActivity extends AppCompatActivity {
         public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
             String entry = charSequence.toString().trim().toUpperCase();
 
+            mMovieListAdapter.clear();
             if (entry.equals(""))
                 mMovieListAdapter.addAll(allMoviesList);
             else {
-                mMovieListAdapter.clear();
                 for (Movie c : allMoviesList)
                     if (c.getMovieTitle().toUpperCase().contains(entry)
                             || c.getGenre().toUpperCase().contains(entry))

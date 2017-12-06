@@ -10,9 +10,9 @@
     android:padding="15dp">
 
     <ImageView
-        android:id="@+id/MovieImageView"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:id="@+id/top5MoviesProfileImage"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         app:srcCompat="@drawable/default_profile_image"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
@@ -33,7 +33,7 @@
         android:fontFamily="sans-serif-smallcaps"
         android:text="My Top 5 Reviews"
         android:textSize="30sp"
-        android:layout_below="@+id/MovieImageView"
+        android:layout_below="@id/top5MoviesProfileImage"
         android:layout_centerHorizontal="true"
         android:textColor="@color/black"/>
 </RelativeLayout>

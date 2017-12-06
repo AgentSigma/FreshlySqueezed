@@ -30,7 +30,6 @@ public class LoginActivity extends AppCompatActivity {
         passwordEditText.setText("StarKiller"); // DEBUG
         db = new DBHelper(this);
 
-        db.deleteDatabaseDEBUG();
 
         allProfilesList = db.getAllProfiles();
     }
@@ -50,6 +49,7 @@ public class LoginActivity extends AppCompatActivity {
                     intent.putExtra("userProfile", p);
                     loginSuccess = true;
                     resetViewText();
+                    Toast.makeText(this, "Welcome " + usernameText + "!", Toast.LENGTH_SHORT).show();
                     startActivity(intent);
                 }
             }

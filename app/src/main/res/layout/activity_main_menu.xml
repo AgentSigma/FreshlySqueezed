@@ -15,8 +15,8 @@
         android:layout_centerHorizontal="true"
         android:id="@+id/imageView2"/>
     <ImageView
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:src="@drawable/default_profile_image"
         android:layout_below="@id/imageView2"
         android:layout_centerHorizontal="true"

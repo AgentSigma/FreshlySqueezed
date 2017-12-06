@@ -97,6 +97,18 @@ public class DBHelper extends SQLiteOpenHelper {
         db.close();
     }
 
+    public void updateProfile(Profile profile){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+
+        values.put(FIELD_USERNAME, profile.getUsername());
+        values.put(FIELD_PASSWORD, profile.getPassword());
+        values.put(FIELD_IMAGENAME, profile.getImage());
+        db.update(DATABASE_TABLE, values, KEY_FIELD_ID + " = ?",
+                new String[]{String.valueOf(profile.getId())});
+        db.close();
+    }
+
     /**
      * Returns all profiles in an ArrayList<Profile>
      */
