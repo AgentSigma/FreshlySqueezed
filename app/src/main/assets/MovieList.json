@@ -4,127 +4,260 @@
       "Title": "The Shawshank Redemption",
       "Genre": "Crime, Drama",
       "Rating": "4.8",
-      "Description": "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
+      "Description": "(1994) Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
       "ImageName": "shawshank"
     },
     {
       "Title": "The Godfather",
       "Genre": "Crime, Drama",
       "Rating": "4.7",
-      "Description": "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.",
+      "Description": "(1972) The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.",
       "ImageName": "godfather"
     },
     {
       "Title": "The Dark Knight",
       "Genre": "Action, Crime, Drama",
       "Rating": "4.6",
-      "Description": "When the menace known as the Joker emerges from his mysterious past, he wreaks havoc and chaos on the people of Gotham, the Dark Knight must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
+      "Description": "(2008) When the menace known as the Joker emerges from his mysterious past, he wreaks havoc and chaos on the people of Gotham, the Dark Knight must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
       "ImageName": "darkknight"
     },
     {
       "Title": "The Godfather: Part II",
       "Genre": "Crime, Drama",
       "Rating": "4.6",
-      "Description": "The early life and career of Vito Corleone in 1920s New York City is portrayed, while his son, Michael, expands and tightens his grip on the family crime syndicate.",
+      "Description": "(1974) The early life and career of Vito Corleone in 1920s New York City is portrayed, while his son, Michael, expands and tightens his grip on the family crime syndicate.",
       "ImageName": "godfather2"
     },
     {
       "Title": "Pulp Fiction",
       "Genre": "Crime, Drama",
       "Rating": "4.6",
-      "Description": "The lives of two mob hit men, a boxer, a gangster's wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
+      "Description": "(1994) The lives of two mob hit men, a boxer, a gangster's wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
       "ImageName": "pulpfiction"
     },
     {
       "Title": "Schindler's List",
       "Genre": "Biography, Drama, History",
       "Rating": "4.5",
-      "Description": "In German-occupied Poland during World War II, Oskar Schindler gradually becomes concerned for his Jewish workforce after witnessing their persecution by the Nazi Germans.",
+      "Description": "(1993) In German-occupied Poland during World War II, Oskar Schindler gradually becomes concerned for his Jewish workforce after witnessing their persecution by the Nazi Germans.",
       "ImageName": "schindlerslist"
     },
     {
       "Title": "The Lord of the Rings: Return of the King",
       "Genre": "Adventure, Drama, Fantasy",
       "Rating": "4.5",
-      "Description": "Gandalf and Aragorn lead the World of Men against Sauron's army to draw his gaze from Frodo and Sam as they approach Mount Doom with the One Ring.",
+      "Description": "(2003) Gandalf and Aragorn lead the World of Men against Sauron's army to draw his gaze from Frodo and Sam as they approach Mount Doom with the One Ring.",
       "ImageName": "lotrreturnoftheking"
     },
     {
       "Title": "12 Angry Men",
       "Genre": "Crime, Drama",
       "Rating": "4.5",
-      "Description": "A jury holdout attempts to prevent a miscarriage of justice by forcing his colleagues to reconsider the evidence.",
+      "Description": "(1957) A jury holdout attempts to prevent a miscarriage of justice by forcing his colleagues to reconsider the evidence.",
       "ImageName": "angrymen"
     },
     {
       "Title": "The Good, the Bad, and the Ugly",
       "Genre": "Western",
       "Rating": "4.5",
-      "Description": "A bounty hunting scam joins two men in an uneasy alliance against a third in a race to find a fortune in gold buried in a remote cemetery.",
+      "Description": "(1966) A bounty hunting scam joins two men in an uneasy alliance against a third in a race to find a fortune in gold buried in a remote cemetery.",
       "ImageName": "goodbadugly"
     },
     {
       "Title": "Inception",
       "Genre": "Action, Adventure, Sci-Fi",
       "Rating": "4.4",
-      "Description": "A thief, who steals corporate secrets through use of dream-sharing technology, is given the inverse task of planting an idea into the mind of a CEO.",
+      "Description": "(2010) A thief, who steals corporate secrets through use of dream-sharing technology, is given the inverse task of planting an idea into the mind of a CEO.",
       "ImageName": "inception"
     },
      {
       "Title": "The Lord of the Rings: The Fellowship of the Ring ",
       "Genre": "Adventure, Drama, Fantasy",
       "Rating": "4.4",
-      "Description": "While Frodo and Sam edge closer to Mordor with the help of the shifty Gollum, the divided fellowship makes a stand against Sauron's new ally, Saruman, and his hordes of Isengard.",
+      "Description": "(2001) While Frodo and Sam edge closer to Mordor with the help of the shifty Gollum, the divided fellowship makes a stand against Sauron's new ally, Saruman, and his hordes of Isengard.",
       "ImageName": "lotrfellowship"
     },
     {
       "Title": "Fight Club",
       "Genre": "Drama",
       "Rating": "4.4",
-      "Description": "An insomniac office worker, looking for a way to change his life, crosses paths with a devil-may-care soap maker, forming an underground fight club that evolves into something much, much more.",
+      "Description": "(1999) An insomniac office worker, looking for a way to change his life, crosses paths with a devil-may-care soap maker, forming an underground fight club that evolves into something much, much more.",
       "ImageName": "fightclub"
     },
     {
       "Title": "Forrest Gump",
       "Genre": "Drama, Romance",
       "Rating": "4.4",
-      "Description": "JFK, LBJ, Vietnam, Watergate, and other history unfold through the perspective of an Alabama man with an IQ of 75.",
+      "Description": "(1994) JFK, LBJ, Vietnam, Watergate, and other history unfold through the perspective of an Alabama man with an IQ of 75.",
       "ImageName": "forestgump"
     },
     {
       "Title": "Star Wars: Episode V - The Empire Strikes Back",
       "Genre": "Action, Adventure, Fantasy",
       "Rating": "4.4",
-      "Description": "After the rebels are overpowered by the Empire on their newly established base, Luke Skywalker begins Jedi training with Yoda. His friends accept shelter from a questionable ally as Darth Vader hunts them in a plan to capture Luke.",
+      "Description": "(1980) After the rebels are overpowered by the Empire on their newly established base, Luke Skywalker begins Jedi training with Yoda. His friends accept shelter from a questionable ally as Darth Vader hunts them in a plan to capture Luke.",
       "ImageName": "starwars5"
     },
     {
       "Title": "Star Wars: Episode IV - A New Hope",
       "Genre": "Adventure, Drama, Fantasy",
       "Rating": "4.4",
-      "Description": "Luke Skywalker joins forces with a Jedi Knight, a cocky pilot, a Wookiee and two droids to save the galaxy from the Empire's world-destroying battle-station while also attempting to rescue Princess Leia from the evil Darth Vader.",
+      "Description": "(1977) Luke Skywalker joins forces with a Jedi Knight, a cocky pilot, a Wookiee and two droids to save the galaxy from the Empire's world-destroying battle-station while also attempting to rescue Princess Leia from the evil Darth Vader.",
       "ImageName": "starwars4"
     },
     {
       "Title": "Goodfellas",
       "Genre": "Biography, Crime, Drama",
       "Rating": "4.4",
-      "Description": "The story of Henry Hill and his life in the mob, covering his relationship with his wife Karen Hill and his Mob partners Jimmy Conway and Tommy DeVito in the Italian-American crime syndicate.",
+      "Description": "(1990) The story of Henry Hill and his life in the mob, covering his relationship with his wife Karen Hill and his Mob partners Jimmy Conway and Tommy DeVito in the Italian-American crime syndicate.",
       "ImageName": "goodfellas"
     },
     {
       "Title": "The Matrix",
       "Genre": "Action, Sci-Fi",
       "Rating": "4.4",
-      "Description": "A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.",
+      "Description": "(1999) A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.",
       "ImageName": "matrix"
     },
     {
       "Title": "One Flew Over the Cuckoo's Nest",
       "Genre": "Drama",
       "Rating": "4.4",
-      "Description": "",
+      "Description": "(1975) A criminal pleads insanity after getting into trouble again and once in the mental institution rebels against the oppressive nurse and rallies up the scared patients.",
       "ImageName": "cuckoosnest"
+    },
+    {
+      "Title": "Justice League",
+      "Genre": "Action, Adventure, Fantasy",
+      "Rating": "3.5",
+      "Description": "(2017) Fueled by his restored faith in humanity and inspired by Superman's selfless act, Bruce Wayne enlists the help of his newfound ally, Diana Prince, to face an even greater enemy.",
+      "ImageName": "justiceleague"
+    },
+    {
+      "Title": "Thor: Ragnarok",
+      "Genre": "Action, Adventure, Comedy",
+      "Rating": "4.1",
+      "Description": "(2017) Imprisoned, the almighty Thor finds himself in a lethal gladiatorial contest against the Hulk, his former ally. Thor must fight for survival and race against time to prevent the all-powerful Hela from destroying his home and the Asgardian civilization.",
+      "ImageName": "thor"
+    },
+    {
+      "Title": "Murder on the Orient Express",
+      "Genre": "Crime, Drama, Mystery",
+      "Rating": "3.4",
+      "Description": "(2017) When a murder occurs on the train he's travelling on, celebrated detective Hercule Poirot is recruited to solve the case.",
+      "ImageName": "murderorient"
+    },
+    {
+      "Title": "Coco",
+      "Genre": "Animation, Adventure, Comedy",
+      "Rating": "4.5",
+      "Description": "(2017) Aspiring musician Miguel, confronted with his family's ancestral ban on music, enters the Land of the Dead to find his great-great-grandfather, a legendary singer.",
+      "ImageName": "coco"
+    },
+    {
+      "Title": "Lady Bird ",
+      "Genre": "Comedy, Drama",
+      "Rating": "4.3",
+      "Description": "(2017) In the early 2000s, an artistically-inclined seventeen year-old comes of age in Sacramento, California.",
+      "ImageName": "ladybird"
+    },
+    {
+      "Title": "Kingsman: The Golden Circle",
+      "Genre": "Action, Adventure, Comedy",
+      "Rating": "3.6",
+      "Description": "(2017) When their headquarters are destroyed and the world is held hostage, the Kingsman's journey leads them to the discovery of an allied spy organization in the US. These two elite secret organizations must band together to defeat a common enemy.",
+      "ImageName": "kingsmengolden"
+    },
+    {
+      "Title": "The Disaster Artist",
+      "Genre": "Biography, Comedy, Drama",
+      "Rating": "4.4",
+      "Description": "(2017) When Greg Sestero, an aspiring film actor, meets the weird and mysterious Tommy Wiseau in an acting class, they form a unique friendship and travel to Hollywood to make their dreams come true.",
+      "ImageName": "disasterartist"
+    },
+    {
+      "Title": "The Shape of Water",
+      "Genre": "Adventure, Drama, Fantasy",
+      "Rating": "3.9",
+      "Description": "(2017) An other-worldly fairy tale, set against the backdrop of Cold War era America circa 1962. In the hidden high-security government laboratory where she works, lonely Elisa (Sally Hawkins) is trapped in a life of isolation. Elisa's life is changed forever when she and co-worker Zelda (Octavia Spencer) discover a secret classified experiment.",
+      "ImageName": "shapeowater"
+    },
+    {
+      "Title": "It",
+      "Genre": "Horror, Thriller",
+      "Rating": "4.1",
+      "Description": "(2017) A group of bullied kids band together when a shapeshifting monster, taking the appearance of a clown, begins hunting children.",
+      "ImageName": "it"
+    },
+    {
+      "Title": "Blade Runner 2049",
+      "Genre": "Mystery, Sci-Fi, Thriller",
+      "Rating": "4.3 ",
+      "Description": "(2017) A young blade runner's discovery of a long-buried secret leads him to track down former blade runner Rick Deckard, who's been missing for thirty years.",
+      "ImageName": "bladerunner2049"
+    },
+    {
+      "Title": "Atomic Blonde ",
+      "Genre": "Action, Mystery, Thriller",
+      "Rating": "3.5",
+      "Description": "(2017) An undercover MI6 agent is sent to Berlin during the Cold War to investigate the murder of a fellow agent and recover a missing list of double agents.",
+      "ImageName": "atomicblonde"
+    },
+    {
+      "Title": "Get Out",
+      "Genre": "Horror, Mystery, Thriller",
+      "Rating": "4.0",
+      "Description": "(2017) It's time for a young African American to meet with his white girlfriend's parents for a weekend in their secluded estate in the woods, but before long, the friendly and polite ambience will give way to a nightmare.",
+      "ImageName": "getout"
+    },
+    {
+      "Title": "Baby Driver",
+      "Genre": "Action, Crime, Music",
+      "Rating": "4.1",
+      "Description": "(2017) After being coerced into working for a crime boss, a young getaway driver finds himself taking part in a heist doomed to fail.",
+      "ImageName": "babydriver"
+    },
+    {
+      "Title": "Wonder Wheel",
+      "Genre": "Drama",
+      "Rating": "2.9",
+      "Description": "(2017) On Coney Island in the 1950s, a lifeguard tells the story of a middle-aged carousel operator and his beleaguered wife.",
+      "ImageName": "wonderwheel"
+    },
+    {
+      "Title": "American Made",
+      "Genre": "Action, Biography, Comedy",
+      "Rating": "3.6",
+      "Description": "(2017) The story of Barry Seal, an American pilot who became a drug-runner for the CIA in the 1980s in a clandestine operation that would be exposed as the Iran-Contra Affair.",
+      "ImageName": "americanmade"
+    },
+    {
+      "Title": "The Big Sick ",
+      "Genre": "Comedy, Drama, Romance",
+      "Rating": "4.0",
+      "Description": "(2017) Pakistan-born comedian Kumail Nanjiani and grad student Emily Gardner fall in love but struggle as their cultures clash. When Emily contracts a mysterious illness, Kumail finds himself forced to face her feisty parents, his family's expectations, and his true feelings.",
+      "ImageName": "bigsick"
+    },
+    {
+      "Title": "Dunkirk",
+      "Genre": "Action, Drama, History",
+      "Rating": "4.2",
+      "Description": "(2017) Allied soldiers from Belgium, the British Empire and France are surrounded by the German Army, and evacuated during a fierce battle in World War II.",
+      "ImageName": "dunkirk"
+    },
+    {
+      "Title": "War for the Planet of the Apes",
+      "Genre": "Action, Adventure, Drama",
+      "Rating": "3.8",
+      "Description": "(2017) After the apes suffer unimaginable losses, Caesar wrestles with his darker instincts and begins his own mythic quest to avenge his kind.",
+      "ImageName": "warplanetapes"
+    },
+    {
+      "Title": "The Room",
+      "Genre": "Drama",
+      "Rating": "0.1",
+      "Description": "(2003) Johnny is a successful banker who lives happily in a San Francisco townhouse with his fiancée, Lisa. One day, inexplicably, she gets bored with him and decides to seduce his best friend, Mark. From there, nothing will be the same again.",
+      "ImageName": "theroom"
     }
   ]
 }
