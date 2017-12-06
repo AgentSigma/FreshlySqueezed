@@ -1,19 +1,41 @@
 package edu.orangecoastcollege.cs220.dreyna3.freshlysqueezed;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.net.Uri;
+import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
+
+import java.io.IOException;
 
 public class ReviewsMenuActivity extends AppCompatActivity {
 
     private Profile userProfile;
+    private Uri mUri;
+    private ImageView userImage;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reviews_menu);
 
+        userImage = (ImageView) findViewById(R.id.reviewMenuProfileImage);
+
         userProfile = getIntent().getExtras().getParcelable("userProfile");
+        mUri = Uri.parse(userProfile.getImage());
+        try {
+            Bitmap bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), mUri);
+            bitmap = Bitmap.createScaledBitmap(bitmap,
+                    (int) (bitmap.getWidth()*0.3),
+                    (int) (bitmap.getHeight()*0.3), true);
+
+            userImage.setImageBitmap(bitmap);
+        } catch (IOException e) {
+            Log.e("ListAllReviews", "Error getting bitmap from: " + mUri.toString(), e);
+        }
     }
 
     public void toWriteReviewClick(View view) {

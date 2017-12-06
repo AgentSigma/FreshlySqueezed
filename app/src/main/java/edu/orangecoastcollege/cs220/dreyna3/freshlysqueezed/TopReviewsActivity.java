@@ -22,6 +22,7 @@ public class TopReviewsActivity extends AppCompatActivity {
     private DBHelper mDb;
     private ImageView mUserImage;
     private Uri mUri;
+    private List<Review> mFilteredReviews;
 
 
     @Override
@@ -36,13 +37,13 @@ public class TopReviewsActivity extends AppCompatActivity {
         mDb = new DBHelper(this);
         userReviewsList = mDb.getAllReivews();
 
-        filterForUsersReviews(userProfile.getUsername(), userReviewsList);
+        mFilteredReviews = filterForUsersReviews(userProfile.getUsername(), userReviewsList);
 
-        if (userReviewsList.size() > 1)
-            userReviewsList = (ArrayList<Review>) filterTop5Reviews(userReviewsList);
+        if (mFilteredReviews.size() > 1)
+            mFilteredReviews = filterTop5Reviews(mFilteredReviews);
 
         ReviewListAdapter movieListAdapter =
-                new ReviewListAdapter(this, R.layout.review_list_item, userReviewsList);
+                new ReviewListAdapter(this, R.layout.review_list_item, mFilteredReviews);
         top5MoviesListView.setAdapter(movieListAdapter);
 
         mUri = Uri.parse(userProfile.getImage());
@@ -58,10 +59,12 @@ public class TopReviewsActivity extends AppCompatActivity {
         }
     }
 
-    private void filterForUsersReviews(String username, List<Review> reviewList) {
+    private List<Review> filterForUsersReviews(String username, List<Review> reviewList) {
+        List<Review> filteredReviews = new ArrayList<>();
         for (Review r : reviewList)
-            if (!r.getAuthor().equals(username))
-                reviewList.remove(r);
+            if (r.getAuthor().equals(username))
+                filteredReviews.add(r);
+        return filteredReviews;
     }
 
     private List<Review> filterTop5Reviews(List<Review> reviewList){
@@ -69,7 +72,7 @@ public class TopReviewsActivity extends AppCompatActivity {
         int i = 0;
         int size = reviewList.size();
         // TODO: set reviewList to be top5. Have top5 be a sorted list (by rating) of reviews
-        while (i < 5) {
+        while (i < 5 && size > 0) {
             float greatest = 0;
             int position = 0;
             for (int j = 0; j < size; j++) {
