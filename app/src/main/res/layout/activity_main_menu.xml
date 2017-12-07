@@ -5,7 +5,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 tools:context="edu.orangecoastcollege.cs220.dreyna3.freshlysqueezed.MainMenuActivity"
-                android:background="@drawable/main_menu_bkg">
+                android:background="@drawable/gradient_bg">
 
     <ImageView
         android:layout_width="match_parent"
@@ -48,13 +48,13 @@
 
     <Button
         android:id="@+id/logoutButton"
-        style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
+        style="col"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/button5"
         android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/button5"
-        android:width="160dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginBottom="15dp"
         android:onClick="logOutClick"
-        android:text="Logout" />
+        android:text="Logout"
+        android:layout_marginStart="15dp"/>
 </RelativeLayout>

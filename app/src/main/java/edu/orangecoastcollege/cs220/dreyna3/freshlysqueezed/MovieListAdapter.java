@@ -71,7 +71,7 @@ public class MovieListAdapter extends ArrayAdapter<Movie> {
                 + movies.getImageName());
         try {
             Bitmap bitmap = MediaStore.Images.Media.getBitmap(mContext.getContentResolver(), mUri);
-            bitmap = Bitmap.createScaledBitmap(bitmap, 100, 150, true);
+            bitmap = Bitmap.createScaledBitmap(bitmap, (int) (bitmap.getWidth()*0.3), (int) (bitmap.getHeight()*0.3), true);
             MovieImageView.setImageBitmap(bitmap);
         } catch (IOException e) {
             Log.e("MovieListAdapter", "Error getting bitmap from: " + mUri.toString(), e);

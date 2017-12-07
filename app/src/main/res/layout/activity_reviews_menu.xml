@@ -14,8 +14,7 @@
         android:layout_height="80dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/default_profile_image"
-        android:onClick="toMainMenuClick"/>
+        android:src="@drawable/default_profile_image"/>
 
     <Button
         android:id="@+id/button"
@@ -30,29 +29,16 @@
         android:layout_alignStart="@+id/button3"
         android:onClick="toDeleteReviewsClick"/>
 
-    <TextView
-        android:id="@+id/ReviewmovieTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-smallcaps"
-        android:text="Select an option:"
-        android:textColor="@color/black"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="67dp"
-        android:layout_above="@+id/button"
-        android:layout_centerHorizontal="true" />
-
     <Button
         android:id="@+id/button3"
         style="@style/Base.Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:layout_marginTop="214dp"
         android:width="160dp"
         android:text="Write review"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="300dp"
         android:onClick="toWriteReviewClick"/>
 
     <Button
